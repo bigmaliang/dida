@@ -1,3 +1,4 @@
+LOCALBASE = ./
 include Make.env
 include $(BASEDIR)Make.env
 

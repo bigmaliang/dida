@@ -1,0 +1,3 @@
+[submodule "moon"]
+	path = moon
+	url = git@github.com:bigml/cmoon.git
