@@ -27,15 +27,13 @@ b/base.css: reset.css base.css layout.css modules/overlay.css
 
 b/index.css: modules/indicator.css modules/dateinput/dateinput.css \
              modules/tooltip.css \
-             modules/noty/jquery.noty.css modules/noty/noty_theme_mitgux.css \
              index/index.css
 b/readme.css: readme.css
 
 b/admin/spd/post.css: modules/indicator.css admin/spd/post.css
 b/admin/spd/robot.css: admin/spd/robot.css
 
-b/member/regist.css: modules/noty/jquery.noty.css modules/noty/noty_theme_mitgux.css \
-                     modules/indicator.css
+b/member/regist.css: modules/indicator.css
 b/member/account.css: modules/box.css modules/minibtn.css modules/indicator.css \
                       modules/dateinput/dateinput.css \
                       member/account.css
@@ -49,7 +47,6 @@ b/bore/op.css: modules/indicator.css bore/mku_skin.css bore/mku_set.css bore/op.
 b/plan/info.css: plan/info.css
 b/plan/mine.css: modules/dateinput/dateinput.css modules/tooltip.css \
                  modules/indicator.css modules/minibtn.css modules/pagenav.css \
-                 modules/noty/jquery.noty.css modules/noty/noty_theme_mitgux.css \
                  plan/mine.css
 
 b/inbox/system.css: modules/accordion.css modules/box.css modules/pagenav.css \

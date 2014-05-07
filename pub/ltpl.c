@@ -2,7 +2,7 @@
 #include "lheads.h"
 
 /*
- * TODO how make local dlsym ok? so tired 
+ * TODO how make local dlsym ok? so tired
  */
 static void ltpl_donotcall()
 {
@@ -32,16 +32,16 @@ int ltpl_config(const struct dirent *ent)
 void ltpl_prepare_rend(HDF *hdf, char *tpl)
 {
     char key[LEN_ST];
-    HDF *tmphdf, *ahdf; 
+    HDF *tmphdf, *ahdf;
     if (hdf == NULL) return;
 
     /*
-     * merge dataset from g_cfg 
+     * merge dataset from g_cfg
      */
     snprintf(key, sizeof(key), PRE_CFG_DATASET".%s", tpl);
     tmphdf = hdf_get_obj(g_cfg, key);
     if (tmphdf != NULL) hdf_copy(hdf, PRE_CFG_LAYOUT, tmphdf);
-    
+
     /*
      * special actions
      */
@@ -50,10 +50,10 @@ void ltpl_prepare_rend(HDF *hdf, char *tpl)
         snprintf(key, sizeof(key), PRE_LAYOUT".%s", hdf_obj_value(tmphdf));
         ahdf = hdf_get_obj(hdf, key);
         if (ahdf) hdf_copy(hdf, PRE_LAYOUT".actions", ahdf);
-        
+
         tmphdf = hdf_obj_next(tmphdf);
     }
-    
+
     /*
      * set classes
      */
@@ -73,12 +73,12 @@ NEOERR* ltpl_parse_file(HASH *dbh, HASH *evth,
     char fname[_POSIX_PATH_MAX], tok[64], *outfile;
     NEOERR* (*data_handler)(HDF *hdf, HASH *dbh, HASH *evth);
     NEOERR *err;
-    
+
     memset(fname, 0x0, sizeof(fname));
     snprintf(fname, sizeof(fname), "%s/%s", dir, name);
     err = hdf_init(&node);
     if (err != STATUS_OK) return nerr_pass(err);
- 
+
     err = hdf_read_file(node, fname);
     if (err != STATUS_OK) return nerr_pass(err);
 
@@ -113,7 +113,7 @@ NEOERR* ltpl_parse_file(HASH *dbh, HASH *evth,
         JUMP_NOK(err, wnext);
         err = hdf_copy(dhdf, NULL, thdf);
         JUMP_NOK(err, wnext);
-        
+
         err = cs_init(&cs, dhdf);
         JUMP_NOK(err, wnext);
 
@@ -139,7 +139,7 @@ NEOERR* ltpl_parse_file(HASH *dbh, HASH *evth,
              * store template for rend stage use
              */
             hdf_set_value(cs->hdf, PRE_RESERVE"."PRE_CFG_LAYOUT, tpl);
-            
+
             /*
              * strdup the key, baby, because we'll free the hdf later
              */
@@ -153,7 +153,7 @@ NEOERR* ltpl_parse_file(HASH *dbh, HASH *evth,
 
         if ((outfile = hdf_get_value(child, PRE_CFG_OUTPUT, NULL)) != NULL) {
             ltpl_prepare_rend(cs->hdf, tpl);
-                
+
             /*
              * get_data
              */
@@ -205,7 +205,7 @@ NEOERR* ltpl_parse_file(HASH *dbh, HASH *evth,
         string_clear(&str);
         child = hdf_obj_next(child);
     }
-        
+
     if (node != NULL) hdf_destroy(&node);
 
     return STATUS_OK;
@@ -222,13 +222,13 @@ NEOERR* ltpl_parse_dir(char *dir, HASH *outhash)
     HASH *dbh, *evth;
     void *lib = dlopen(NULL, RTLD_NOW|RTLD_GLOBAL);
     if (!lib) return nerr_raise(NERR_SYSTEM, "dlopen %s", dlerror());
-    
+
     err = ldb_init(&dbh);
     if (err != STATUS_OK) return nerr_pass(err);
-    
+
     err = levt_init(&evth);
     if (err != STATUS_OK) return nerr_pass(err);
-    
+
     n = scandir(dir, &eps, ltpl_config, alphasort);
     for (int i = 0; i < n; i++) {
         mtc_dbg("parse file %s", eps[i]->d_name);
@@ -240,7 +240,7 @@ NEOERR* ltpl_parse_dir(char *dir, HASH *outhash)
     ldb_destroy(dbh);
     levt_destroy(evth);
     dlclose(lib);
-    
+
     if (n > 0) free(eps);
     else mtc_warn("no .hdf file found in %s", dir);
 
@@ -253,15 +253,15 @@ NEOERR* ltpl_init(HASH **tplh, char *path)
     NEOERR *err;
 
     *tplh = NULL;
-    
+
     path = path ? path: PATH_TPL"config/run/";
-	
-    err = hash_init(&ltplh, hash_str_hash, hash_str_comp);
+
+    err = hash_init(&ltplh, hash_str_hash, hash_str_comp, hash_str_free);
     if (err != STATUS_OK) return nerr_pass(err);
 
     err = ltpl_parse_dir(path, ltplh);
     if (err != STATUS_OK) return nerr_pass_ctx(err, "pase dir %s", path);
-    
+
     *tplh = ltplh;
     return STATUS_OK;
 }
@@ -271,7 +271,7 @@ void ltpl_destroy(HASH *tplh)
     char *key, *buf;
 
     if (!tplh) return;
-    
+
     buf = (char*)hash_next(tplh, (void**)&key);
 
     while (buf != NULL) {
@@ -297,11 +297,11 @@ NEOERR* ltpl_render(CGI *cgi, HASH *tplh, session_t *ses)
 
     if (!cs) return nerr_raise(LERR_MISS_TPL, "render %s not found", render);
     if (dhdf) hdf_copy(cgi->hdf, NULL, dhdf);
-    
+
     ltpl_prepare_rend(cgi->hdf, hdf_get_value(cgi->hdf,
                                               PRE_RESERVE"."PRE_CFG_LAYOUT,
                                               "layout.html"));
-    
+
     if (ses->tm_cache_browser > 0) {
         hdf_set_valuef(cgi->hdf, "cgiout.other.cache=Cache-Control: max-age=%lu",
                        ses->tm_cache_browser);
@@ -333,7 +333,7 @@ NEOERR* ltpl_render2file(CGI *cgi, char *render, char *fname)
     NEOERR *err;
 
     MCS_NOT_NULLC(cgi->hdf, render, fname);
-    
+
     tplh = hash_lookup(g_datah, "runtime_templates");
     MCS_NOT_NULLA(tplh);
 
@@ -353,7 +353,7 @@ NEOERR* ltpl_render2file(CGI *cgi, char *render, char *fname)
 
     err = mfile_makesure_dir(fname);
     if (err != STATUS_OK) return nerr_pass(err);
-    
+
     err = mcs_str2file(str, fname);
     if (err != STATUS_OK) return nerr_pass(err);
 

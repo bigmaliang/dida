@@ -32,7 +32,7 @@ struct aux_entry {
  * { "0": { "1": { "ntt": "0", "nst": "0" }, "20": { "ntt": "0", "nst": "0" } }, "success": "1" }
  *
  * ids=0:1,1:20
- * { "0": { "1": { "ntt": "0", "nst": "0" } }, "1": { "20": { "ntt": "0", "nst": "0" } }, "success": "1" } 
+ * { "0": { "1": { "ntt": "0", "nst": "0" } }, "1": { "20": { "ntt": "0", "nst": "0" } }, "success": "1" }
  */
 static NEOERR* aux_cmd_cmtget(struct aux_entry *e, QueueEntry *q)
 {
@@ -99,7 +99,7 @@ static NEOERR* aux_cmd_cmtget(struct aux_entry *e, QueueEntry *q)
             if (err != STATUS_OK) return nerr_pass(err);
             mstr_html_escape(hdf_get_child(q->hdfsnd, tok), "content");
         }
-        
+
         CACHE_HDF(q->hdfsnd, CMT_CC_SEC, PREFIX_COMMENT"%s_%d", idsdump, offset);
         free(idsdump);
     }
@@ -123,13 +123,13 @@ static NEOERR* aux_cmd_cmtadd(struct aux_entry *e, QueueEntry *q)
                           hdf_get_obj(g_cfg, CONFIG_PATH".InsertCol.comment"),
                           &str);
 	if (err != STATUS_OK) return nerr_pass(err);
-    
+
     MDB_EXEC(db, NULL, "INSERT INTO comment %s", NULL, str.buf);
-    
+
     string_clear(&str);
-    
+
     cache_delf(cd, PREFIX_COMMENT"%d:%d_0", type, oid);
-    
+
     return STATUS_OK;
 }
 
@@ -144,7 +144,7 @@ static NEOERR* aux_cmd_cmtdel(struct aux_entry *e, QueueEntry *q)
 
     MDB_EXEC(db, NULL, "UPDATE comment SET statu=%d WHERE id=%d;",
              NULL, CMT_ST_DEL, id);
-    
+
     return STATUS_OK;
 }
 
@@ -177,7 +177,7 @@ static NEOERR* aux_cmd_memoryget(struct aux_entry *e, QueueEntry *q)
 
         CACHE_HDF(q->hdfsnd, MEMORY_CC_SEC, PREFIX_MEMORY"%d", id);
     }
-    
+
     return STATUS_OK;
 }
 
@@ -185,13 +185,13 @@ static NEOERR* aux_cmd_memoryadd(struct aux_entry *e, QueueEntry *q)
 {
 	STRING str; string_init(&str);
 	NEOERR *err;
-    
+
     mdb_conn *db = e->db;
 
     err = mdb_build_incol(q->hdfrcv,
                           hdf_get_obj(g_cfg, CONFIG_PATH".InsertCol.memory"), &str);
 	if (err != STATUS_OK) return nerr_pass(err);
-    
+
     MDB_EXEC(db, NULL, "INSERT INTO memory %s", NULL, str.buf);
 
     string_clear(&str);
@@ -211,7 +211,7 @@ static NEOERR* aux_cmd_memorymod(struct aux_entry *e, QueueEntry *q)
     struct cache *cd = e->cd;
 
     REQ_GET_PARAM_INT(q->hdfrcv, "id", id);
-    
+
     err = mdb_build_upcol(q->hdfrcv,
                           hdf_get_obj(g_cfg, CONFIG_PATH".UpdateCol.memory"), &str);
 	if (err != STATUS_OK) return nerr_pass(err);
@@ -233,7 +233,7 @@ static NEOERR* aux_cmd_emailadd(struct aux_entry *e, QueueEntry *q)
     mdb_conn *db = e->db;
 
     REQ_GET_PARAM_STR(q->hdfrcv, "content", content);
-    
+
     mstr_md5_str(content, sum);
     hdf_set_value(q->hdfrcv, "checksum", sum);
 
@@ -241,12 +241,12 @@ static NEOERR* aux_cmd_emailadd(struct aux_entry *e, QueueEntry *q)
 
 insert:
     if (node) hdf_set_value(q->hdfrcv, "to", hdf_obj_value(node));
-    
+
     err = mdb_build_incol(q->hdfrcv,
                           hdf_get_obj(g_cfg, CONFIG_PATH".InsertCol.email"),
                           &str);
     if (err != STATUS_OK) return nerr_pass(err);
-    
+
     MDB_EXEC(db, NULL, "INSERT INTO email %s", NULL, str.buf);
     string_clear(&str);
 
@@ -261,7 +261,7 @@ insert:
 static NEOERR* aux_cmd_inboxget(struct aux_entry *e, QueueEntry *q)
 {
     unsigned char *val = NULL; size_t vsize = 0;
-    int npp, nst;
+    int count, offset;
     int mid, type = 0;
     NEOERR *err;
 
@@ -324,12 +324,12 @@ insert:
     if (node) hdf_set_value(q->hdfrcv, "mid", hdf_obj_value(node));
 
     REQ_FETCH_PARAM_INT(q->hdfrcv, "type", type);
-    
+
     err = mdb_build_incol(q->hdfrcv,
                           hdf_get_obj(g_cfg, CONFIG_PATH".InsertCol.inbox"),
                           &str);
     if (err != STATUS_OK) return nerr_pass(err);
-    
+
     MDB_EXEC(db, NULL, "INSERT INTO inbox %s", NULL, str.buf);
     string_clear(&str);
 
@@ -359,9 +359,9 @@ static NEOERR* aux_cmd_inboxdel(struct aux_entry *e, QueueEntry *q)
     MDB_EXEC(db, NULL, "UPDATE inbox SET statu=%d WHERE id=%d "
              " AND mid=%d AND type=%d",
              NULL, INBOX_ST_DEL, id, mid, type);
-    
+
     cache_delf(cd, PREFIX_INBOX"%d_%d_0", mid, type);
-    
+
     return STATUS_OK;
 }
 
@@ -370,11 +370,11 @@ static void aux_process_driver(EventEntry *entry, QueueEntry *q)
     struct aux_entry *e = (struct aux_entry*)entry;
     NEOERR *err;
     int ret;
-    
+
     struct aux_stats *st = &(e->st);
 
     st->msg_total++;
-    
+
     mtc_dbg("process cmd %u", q->operation);
     switch (q->operation) {
         CASE_SYS_CMD(q->operation, q, e->cd, err);
@@ -423,7 +423,7 @@ static void aux_process_driver(EventEntry *entry, QueueEntry *q)
         err = nerr_raise(REP_ERR_UNKREQ, "unknown command %u", q->operation);
         break;
     }
-    
+
     NEOERR *neede = mcs_err_valid(err);
     ret = neede ? neede->error : REP_OK;
     if (PROCESS_OK(ret)) {
@@ -445,7 +445,7 @@ static void aux_stop_driver(EventEntry *entry)
     struct aux_entry *e = (struct aux_entry*)entry;
 
     /*
-     * e->base.name, e->base will free by mevent_stop_driver() 
+     * e->base.name, e->base will free by mevent_stop_driver()
      */
     mdb_destroy(e->db);
     cache_free(e->cd);
@@ -468,7 +468,7 @@ static EventEntry* aux_init_driver(void)
     char *s = hdf_get_value(g_cfg, CONFIG_PATH".dbsn", NULL);
     err = mdb_init(&e->db, s);
     JUMP_NOK(err, error);
-    
+
     e->cd = cache_create(hdf_get_int_value(g_cfg, CONFIG_PATH".numobjs", 1024), 0);
     if (e->cd == NULL) {
         wlog("init cache failure");
@@ -483,9 +483,9 @@ static EventEntry* aux_init_driver(void)
         wlog("table memory empty");
     }
     JUMP_NOK(err, error);
-    
+
     return (EventEntry*)e;
-    
+
 error:
     if (e->base.name) free(e->base.name);
     if (e->db) mdb_destroy(e->db);

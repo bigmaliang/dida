@@ -44,7 +44,7 @@ NEOERR* bore_new_data_get(CGI *cgi, HASH *dbh, HASH *evth, session_t *ses)
 {
     char *mname;
 	NEOERR *err;
-    
+
     MEMBER_CHECK_ADMIN();
     SET_BORE_ACTION(cgi->hdf);
 
@@ -56,7 +56,7 @@ NEOERR* bore_op_data_get(CGI *cgi, HASH *dbh, HASH *evth, session_t *ses)
     mevent_t *evt = hash_lookup(evth, "aux");
     char *mname;
 	NEOERR *err;
-    
+
     MEMBER_CHECK_ADMIN();
     SET_BORE_ACTION(cgi->hdf);
 
@@ -110,6 +110,6 @@ NEOERR* bore_preview_data_get(CGI *cgi, HASH *dbh, HASH *evth, session_t *ses)
     hdf_set_copy(cgi->hdf, PRE_OUTPUT".s", PRE_QUERY".s");
 
     mstr_script_escape(cgi->hdf, PRE_OUTPUT".s");
-    
+
     return STATUS_OK;
 }

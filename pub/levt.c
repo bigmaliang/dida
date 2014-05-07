@@ -11,8 +11,8 @@ NEOERR* levt_init(HASH **evth)
 
     node = hdf_get_obj(g_cfg, "Mevent");
     if (!node) return nerr_raise(NERR_ASSERT, "Mevent config not found");
-    
-    err = hash_init(&levth, hash_str_hash, hash_str_comp);
+
+    err = hash_init(&levth, hash_str_hash, hash_str_comp, hash_str_free);
     if (err != STATUS_OK) return nerr_pass(err);
 
     node = hdf_obj_child(node);
@@ -25,7 +25,7 @@ NEOERR* levt_init(HASH **evth)
         } else {
             mtc_err("event %s init failure", ename);
         }
-        
+
         node = hdf_obj_next(node);
     }
 
@@ -36,7 +36,7 @@ NEOERR* levt_init(HASH **evth)
 void levt_destroy(HASH *evth)
 {
     char *key = NULL;
-    
+
     mevent_t *evt = (mevent_t*)hash_next(evth, (void**)&key);
 
     while (evt != NULL) {
@@ -46,4 +46,3 @@ void levt_destroy(HASH *evth)
 
     hash_destroy(&evth);
 }
-

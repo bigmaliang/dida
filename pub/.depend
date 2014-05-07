@@ -1,4 +1,4 @@
-ldb.o: ldb.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
+ldb.o: ldb.c ../moon/lib/mnl/mheads.h ../moon/lib/mbase.h \
   /usr/local/include/ClearSilver/ClearSilver.h \
   /usr/local/include/ClearSilver/cs_config.h \
   /usr/local/include/ClearSilver/util/neo_misc.h \
@@ -106,12 +106,11 @@ ldb.o: ldb.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/version.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/sasl.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/deprecated_types.h \
-  ../../moon/lib/mevent/mevent.h ../../moon/lib/mevent/net-const.h \
-  /usr/local/include/ClearSilver/ClearSilver.h \
-  ../../moon/lib/mevent/cache.h /usr/local/include/json/json.h \
-  /usr/local/include/json/bits.h /usr/local/include/json/debug.h \
-  /usr/local/include/json/linkhash.h /usr/local/include/json/arraylist.h \
-  /usr/local/include/json/json_util.h \
+  ../moon/lib/mevent/mevent.h ../moon/lib/mevent/net-const.h \
+  /usr/local/include/ClearSilver/ClearSilver.h ../moon/lib/mevent/cache.h \
+  /usr/local/include/json/json.h /usr/local/include/json/bits.h \
+  /usr/local/include/json/debug.h /usr/local/include/json/linkhash.h \
+  /usr/local/include/json/arraylist.h /usr/local/include/json/json_util.h \
   /usr/local/include/json/json_object.h \
   /usr/local/include/json/json_tokener.h \
   /usr/local/include/mongo-client/mongo.h \
@@ -201,25 +200,23 @@ ldb.o: ldb.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/include/mongo-client/sync-gridfs.h \
   /usr/local/include/mongo-client/sync-gridfs-chunk.h \
   /usr/local/include/mongo-client/sync-gridfs-stream.h \
-  ../../moon/lib/mnl/mglobal.h ../../moon/lib/mnl/mheads.h \
-  ../../moon/lib/mnl/mtimer.h ../../moon/lib/mnl/mcfg.h \
-  ../../moon/lib/mnl/md5.h ../../moon/lib/mnl/mb64.h \
-  ../../moon/lib/mnl/mmkd.h ../../moon/lib/mnl/mcs.h \
-  ../../moon/lib/mnl/mstr.h ../../moon/lib/mnl/mutil.h \
-  ../../moon/lib/mnl/mtemplate.h ../../moon/lib/mnl/mfile.h \
-  ../../moon/lib/mnl/mimg.h ../../moon/lib/mnl/mtrace.h \
-  ../../moon/lib/mnl/mmemc.h ../../moon/lib/mnl/mjson.h \
-  ../../moon/lib/mnl/mbson.h ../../moon/lib/mnl/mhttp.h \
-  ../../moon/lib/mnl/mdb.h ../../moon/lib/mnl/mmg.h lheads.h lnum.h \
-  ltypes.h lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
-  ../../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
+  ../moon/lib/mnl/mglobal.h ../moon/lib/mnl/mheads.h \
+  ../moon/lib/mnl/mtimer.h ../moon/lib/mnl/mcfg.h ../moon/lib/mnl/md5.h \
+  ../moon/lib/mnl/mb64.h ../moon/lib/mnl/mmkd.h ../moon/lib/mnl/mcs.h \
+  ../moon/lib/mnl/mstr.h ../moon/lib/mnl/mutil.h \
+  ../moon/lib/mnl/mtemplate.h ../moon/lib/mnl/mfile.h \
+  ../moon/lib/mnl/mimg.h ../moon/lib/mnl/mtrace.h ../moon/lib/mnl/mmemc.h \
+  ../moon/lib/mnl/mjson.h ../moon/lib/mnl/mbson.h ../moon/lib/mnl/mhttp.h \
+  ../moon/lib/mnl/mdb.h ../moon/lib/mnl/mmg.h lheads.h lnum.h ltypes.h \
+  lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
+  ../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
   ../xport/plugin/mevent_plan.h ../xport/plugin/mevent_city.h \
   ../xport/plugin/mevent_aux.h ../xport/plugin/mevent_fft.h \
-  ../xport/plugin/mevent_trace.h ../walk/ozero.h \
-  ../../moon/lib/mnl/mheads.h ../walk/ospd.h ../walk/opos.h \
-  ../walk/oplan.h ../walk/omember.h ../walk/obore.h ../walk/ocomment.h \
-  ../walk/oinbox.h ../walk/oemail.h ../walk/otrace.h ../walk/osystem.h
-lerr.o: lerr.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
+  ../xport/plugin/mevent_trace.h ../walk/ozero.h ../moon/lib/mnl/mheads.h \
+  ../walk/ospd.h ../walk/opos.h ../walk/oplan.h ../walk/omember.h \
+  ../walk/obore.h ../walk/ocomment.h ../walk/oinbox.h ../walk/oemail.h \
+  ../walk/otrace.h ../walk/osystem.h
+lerr.o: lerr.c ../moon/lib/mnl/mheads.h ../moon/lib/mbase.h \
   /usr/local/include/ClearSilver/ClearSilver.h \
   /usr/local/include/ClearSilver/cs_config.h \
   /usr/local/include/ClearSilver/util/neo_misc.h \
@@ -327,12 +324,11 @@ lerr.o: lerr.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/version.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/sasl.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/deprecated_types.h \
-  ../../moon/lib/mevent/mevent.h ../../moon/lib/mevent/net-const.h \
-  /usr/local/include/ClearSilver/ClearSilver.h \
-  ../../moon/lib/mevent/cache.h /usr/local/include/json/json.h \
-  /usr/local/include/json/bits.h /usr/local/include/json/debug.h \
-  /usr/local/include/json/linkhash.h /usr/local/include/json/arraylist.h \
-  /usr/local/include/json/json_util.h \
+  ../moon/lib/mevent/mevent.h ../moon/lib/mevent/net-const.h \
+  /usr/local/include/ClearSilver/ClearSilver.h ../moon/lib/mevent/cache.h \
+  /usr/local/include/json/json.h /usr/local/include/json/bits.h \
+  /usr/local/include/json/debug.h /usr/local/include/json/linkhash.h \
+  /usr/local/include/json/arraylist.h /usr/local/include/json/json_util.h \
   /usr/local/include/json/json_object.h \
   /usr/local/include/json/json_tokener.h \
   /usr/local/include/mongo-client/mongo.h \
@@ -422,25 +418,23 @@ lerr.o: lerr.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/include/mongo-client/sync-gridfs.h \
   /usr/local/include/mongo-client/sync-gridfs-chunk.h \
   /usr/local/include/mongo-client/sync-gridfs-stream.h \
-  ../../moon/lib/mnl/mglobal.h ../../moon/lib/mnl/mheads.h \
-  ../../moon/lib/mnl/mtimer.h ../../moon/lib/mnl/mcfg.h \
-  ../../moon/lib/mnl/md5.h ../../moon/lib/mnl/mb64.h \
-  ../../moon/lib/mnl/mmkd.h ../../moon/lib/mnl/mcs.h \
-  ../../moon/lib/mnl/mstr.h ../../moon/lib/mnl/mutil.h \
-  ../../moon/lib/mnl/mtemplate.h ../../moon/lib/mnl/mfile.h \
-  ../../moon/lib/mnl/mimg.h ../../moon/lib/mnl/mtrace.h \
-  ../../moon/lib/mnl/mmemc.h ../../moon/lib/mnl/mjson.h \
-  ../../moon/lib/mnl/mbson.h ../../moon/lib/mnl/mhttp.h \
-  ../../moon/lib/mnl/mdb.h ../../moon/lib/mnl/mmg.h lheads.h lnum.h \
-  ltypes.h lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
-  ../../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
+  ../moon/lib/mnl/mglobal.h ../moon/lib/mnl/mheads.h \
+  ../moon/lib/mnl/mtimer.h ../moon/lib/mnl/mcfg.h ../moon/lib/mnl/md5.h \
+  ../moon/lib/mnl/mb64.h ../moon/lib/mnl/mmkd.h ../moon/lib/mnl/mcs.h \
+  ../moon/lib/mnl/mstr.h ../moon/lib/mnl/mutil.h \
+  ../moon/lib/mnl/mtemplate.h ../moon/lib/mnl/mfile.h \
+  ../moon/lib/mnl/mimg.h ../moon/lib/mnl/mtrace.h ../moon/lib/mnl/mmemc.h \
+  ../moon/lib/mnl/mjson.h ../moon/lib/mnl/mbson.h ../moon/lib/mnl/mhttp.h \
+  ../moon/lib/mnl/mdb.h ../moon/lib/mnl/mmg.h lheads.h lnum.h ltypes.h \
+  lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
+  ../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
   ../xport/plugin/mevent_plan.h ../xport/plugin/mevent_city.h \
   ../xport/plugin/mevent_aux.h ../xport/plugin/mevent_fft.h \
-  ../xport/plugin/mevent_trace.h ../walk/ozero.h \
-  ../../moon/lib/mnl/mheads.h ../walk/ospd.h ../walk/opos.h \
-  ../walk/oplan.h ../walk/omember.h ../walk/obore.h ../walk/ocomment.h \
-  ../walk/oinbox.h ../walk/oemail.h ../walk/otrace.h ../walk/osystem.h
-levt.o: levt.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
+  ../xport/plugin/mevent_trace.h ../walk/ozero.h ../moon/lib/mnl/mheads.h \
+  ../walk/ospd.h ../walk/opos.h ../walk/oplan.h ../walk/omember.h \
+  ../walk/obore.h ../walk/ocomment.h ../walk/oinbox.h ../walk/oemail.h \
+  ../walk/otrace.h ../walk/osystem.h
+levt.o: levt.c ../moon/lib/mnl/mheads.h ../moon/lib/mbase.h \
   /usr/local/include/ClearSilver/ClearSilver.h \
   /usr/local/include/ClearSilver/cs_config.h \
   /usr/local/include/ClearSilver/util/neo_misc.h \
@@ -548,12 +542,11 @@ levt.o: levt.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/version.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/sasl.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/deprecated_types.h \
-  ../../moon/lib/mevent/mevent.h ../../moon/lib/mevent/net-const.h \
-  /usr/local/include/ClearSilver/ClearSilver.h \
-  ../../moon/lib/mevent/cache.h /usr/local/include/json/json.h \
-  /usr/local/include/json/bits.h /usr/local/include/json/debug.h \
-  /usr/local/include/json/linkhash.h /usr/local/include/json/arraylist.h \
-  /usr/local/include/json/json_util.h \
+  ../moon/lib/mevent/mevent.h ../moon/lib/mevent/net-const.h \
+  /usr/local/include/ClearSilver/ClearSilver.h ../moon/lib/mevent/cache.h \
+  /usr/local/include/json/json.h /usr/local/include/json/bits.h \
+  /usr/local/include/json/debug.h /usr/local/include/json/linkhash.h \
+  /usr/local/include/json/arraylist.h /usr/local/include/json/json_util.h \
   /usr/local/include/json/json_object.h \
   /usr/local/include/json/json_tokener.h \
   /usr/local/include/mongo-client/mongo.h \
@@ -643,25 +636,23 @@ levt.o: levt.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/include/mongo-client/sync-gridfs.h \
   /usr/local/include/mongo-client/sync-gridfs-chunk.h \
   /usr/local/include/mongo-client/sync-gridfs-stream.h \
-  ../../moon/lib/mnl/mglobal.h ../../moon/lib/mnl/mheads.h \
-  ../../moon/lib/mnl/mtimer.h ../../moon/lib/mnl/mcfg.h \
-  ../../moon/lib/mnl/md5.h ../../moon/lib/mnl/mb64.h \
-  ../../moon/lib/mnl/mmkd.h ../../moon/lib/mnl/mcs.h \
-  ../../moon/lib/mnl/mstr.h ../../moon/lib/mnl/mutil.h \
-  ../../moon/lib/mnl/mtemplate.h ../../moon/lib/mnl/mfile.h \
-  ../../moon/lib/mnl/mimg.h ../../moon/lib/mnl/mtrace.h \
-  ../../moon/lib/mnl/mmemc.h ../../moon/lib/mnl/mjson.h \
-  ../../moon/lib/mnl/mbson.h ../../moon/lib/mnl/mhttp.h \
-  ../../moon/lib/mnl/mdb.h ../../moon/lib/mnl/mmg.h lheads.h lnum.h \
-  ltypes.h lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
-  ../../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
+  ../moon/lib/mnl/mglobal.h ../moon/lib/mnl/mheads.h \
+  ../moon/lib/mnl/mtimer.h ../moon/lib/mnl/mcfg.h ../moon/lib/mnl/md5.h \
+  ../moon/lib/mnl/mb64.h ../moon/lib/mnl/mmkd.h ../moon/lib/mnl/mcs.h \
+  ../moon/lib/mnl/mstr.h ../moon/lib/mnl/mutil.h \
+  ../moon/lib/mnl/mtemplate.h ../moon/lib/mnl/mfile.h \
+  ../moon/lib/mnl/mimg.h ../moon/lib/mnl/mtrace.h ../moon/lib/mnl/mmemc.h \
+  ../moon/lib/mnl/mjson.h ../moon/lib/mnl/mbson.h ../moon/lib/mnl/mhttp.h \
+  ../moon/lib/mnl/mdb.h ../moon/lib/mnl/mmg.h lheads.h lnum.h ltypes.h \
+  lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
+  ../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
   ../xport/plugin/mevent_plan.h ../xport/plugin/mevent_city.h \
   ../xport/plugin/mevent_aux.h ../xport/plugin/mevent_fft.h \
-  ../xport/plugin/mevent_trace.h ../walk/ozero.h \
-  ../../moon/lib/mnl/mheads.h ../walk/ospd.h ../walk/opos.h \
-  ../walk/oplan.h ../walk/omember.h ../walk/obore.h ../walk/ocomment.h \
-  ../walk/oinbox.h ../walk/oemail.h ../walk/otrace.h ../walk/osystem.h
-ltpl.o: ltpl.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
+  ../xport/plugin/mevent_trace.h ../walk/ozero.h ../moon/lib/mnl/mheads.h \
+  ../walk/ospd.h ../walk/opos.h ../walk/oplan.h ../walk/omember.h \
+  ../walk/obore.h ../walk/ocomment.h ../walk/oinbox.h ../walk/oemail.h \
+  ../walk/otrace.h ../walk/osystem.h
+ltpl.o: ltpl.c ../moon/lib/mnl/mheads.h ../moon/lib/mbase.h \
   /usr/local/include/ClearSilver/ClearSilver.h \
   /usr/local/include/ClearSilver/cs_config.h \
   /usr/local/include/ClearSilver/util/neo_misc.h \
@@ -769,12 +760,11 @@ ltpl.o: ltpl.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/version.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/sasl.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/deprecated_types.h \
-  ../../moon/lib/mevent/mevent.h ../../moon/lib/mevent/net-const.h \
-  /usr/local/include/ClearSilver/ClearSilver.h \
-  ../../moon/lib/mevent/cache.h /usr/local/include/json/json.h \
-  /usr/local/include/json/bits.h /usr/local/include/json/debug.h \
-  /usr/local/include/json/linkhash.h /usr/local/include/json/arraylist.h \
-  /usr/local/include/json/json_util.h \
+  ../moon/lib/mevent/mevent.h ../moon/lib/mevent/net-const.h \
+  /usr/local/include/ClearSilver/ClearSilver.h ../moon/lib/mevent/cache.h \
+  /usr/local/include/json/json.h /usr/local/include/json/bits.h \
+  /usr/local/include/json/debug.h /usr/local/include/json/linkhash.h \
+  /usr/local/include/json/arraylist.h /usr/local/include/json/json_util.h \
   /usr/local/include/json/json_object.h \
   /usr/local/include/json/json_tokener.h \
   /usr/local/include/mongo-client/mongo.h \
@@ -864,25 +854,23 @@ ltpl.o: ltpl.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/include/mongo-client/sync-gridfs.h \
   /usr/local/include/mongo-client/sync-gridfs-chunk.h \
   /usr/local/include/mongo-client/sync-gridfs-stream.h \
-  ../../moon/lib/mnl/mglobal.h ../../moon/lib/mnl/mheads.h \
-  ../../moon/lib/mnl/mtimer.h ../../moon/lib/mnl/mcfg.h \
-  ../../moon/lib/mnl/md5.h ../../moon/lib/mnl/mb64.h \
-  ../../moon/lib/mnl/mmkd.h ../../moon/lib/mnl/mcs.h \
-  ../../moon/lib/mnl/mstr.h ../../moon/lib/mnl/mutil.h \
-  ../../moon/lib/mnl/mtemplate.h ../../moon/lib/mnl/mfile.h \
-  ../../moon/lib/mnl/mimg.h ../../moon/lib/mnl/mtrace.h \
-  ../../moon/lib/mnl/mmemc.h ../../moon/lib/mnl/mjson.h \
-  ../../moon/lib/mnl/mbson.h ../../moon/lib/mnl/mhttp.h \
-  ../../moon/lib/mnl/mdb.h ../../moon/lib/mnl/mmg.h lheads.h lnum.h \
-  ltypes.h lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
-  ../../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
+  ../moon/lib/mnl/mglobal.h ../moon/lib/mnl/mheads.h \
+  ../moon/lib/mnl/mtimer.h ../moon/lib/mnl/mcfg.h ../moon/lib/mnl/md5.h \
+  ../moon/lib/mnl/mb64.h ../moon/lib/mnl/mmkd.h ../moon/lib/mnl/mcs.h \
+  ../moon/lib/mnl/mstr.h ../moon/lib/mnl/mutil.h \
+  ../moon/lib/mnl/mtemplate.h ../moon/lib/mnl/mfile.h \
+  ../moon/lib/mnl/mimg.h ../moon/lib/mnl/mtrace.h ../moon/lib/mnl/mmemc.h \
+  ../moon/lib/mnl/mjson.h ../moon/lib/mnl/mbson.h ../moon/lib/mnl/mhttp.h \
+  ../moon/lib/mnl/mdb.h ../moon/lib/mnl/mmg.h lheads.h lnum.h ltypes.h \
+  lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
+  ../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
   ../xport/plugin/mevent_plan.h ../xport/plugin/mevent_city.h \
   ../xport/plugin/mevent_aux.h ../xport/plugin/mevent_fft.h \
-  ../xport/plugin/mevent_trace.h ../walk/ozero.h \
-  ../../moon/lib/mnl/mheads.h ../walk/ospd.h ../walk/opos.h \
-  ../walk/oplan.h ../walk/omember.h ../walk/obore.h ../walk/ocomment.h \
-  ../walk/oinbox.h ../walk/oemail.h ../walk/otrace.h ../walk/osystem.h
-ltypes.o: ltypes.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
+  ../xport/plugin/mevent_trace.h ../walk/ozero.h ../moon/lib/mnl/mheads.h \
+  ../walk/ospd.h ../walk/opos.h ../walk/oplan.h ../walk/omember.h \
+  ../walk/obore.h ../walk/ocomment.h ../walk/oinbox.h ../walk/oemail.h \
+  ../walk/otrace.h ../walk/osystem.h
+ltypes.o: ltypes.c ../moon/lib/mnl/mheads.h ../moon/lib/mbase.h \
   /usr/local/include/ClearSilver/ClearSilver.h \
   /usr/local/include/ClearSilver/cs_config.h \
   /usr/local/include/ClearSilver/util/neo_misc.h \
@@ -990,12 +978,11 @@ ltypes.o: ltypes.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/version.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/sasl.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/deprecated_types.h \
-  ../../moon/lib/mevent/mevent.h ../../moon/lib/mevent/net-const.h \
-  /usr/local/include/ClearSilver/ClearSilver.h \
-  ../../moon/lib/mevent/cache.h /usr/local/include/json/json.h \
-  /usr/local/include/json/bits.h /usr/local/include/json/debug.h \
-  /usr/local/include/json/linkhash.h /usr/local/include/json/arraylist.h \
-  /usr/local/include/json/json_util.h \
+  ../moon/lib/mevent/mevent.h ../moon/lib/mevent/net-const.h \
+  /usr/local/include/ClearSilver/ClearSilver.h ../moon/lib/mevent/cache.h \
+  /usr/local/include/json/json.h /usr/local/include/json/bits.h \
+  /usr/local/include/json/debug.h /usr/local/include/json/linkhash.h \
+  /usr/local/include/json/arraylist.h /usr/local/include/json/json_util.h \
   /usr/local/include/json/json_object.h \
   /usr/local/include/json/json_tokener.h \
   /usr/local/include/mongo-client/mongo.h \
@@ -1085,25 +1072,23 @@ ltypes.o: ltypes.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/include/mongo-client/sync-gridfs.h \
   /usr/local/include/mongo-client/sync-gridfs-chunk.h \
   /usr/local/include/mongo-client/sync-gridfs-stream.h \
-  ../../moon/lib/mnl/mglobal.h ../../moon/lib/mnl/mheads.h \
-  ../../moon/lib/mnl/mtimer.h ../../moon/lib/mnl/mcfg.h \
-  ../../moon/lib/mnl/md5.h ../../moon/lib/mnl/mb64.h \
-  ../../moon/lib/mnl/mmkd.h ../../moon/lib/mnl/mcs.h \
-  ../../moon/lib/mnl/mstr.h ../../moon/lib/mnl/mutil.h \
-  ../../moon/lib/mnl/mtemplate.h ../../moon/lib/mnl/mfile.h \
-  ../../moon/lib/mnl/mimg.h ../../moon/lib/mnl/mtrace.h \
-  ../../moon/lib/mnl/mmemc.h ../../moon/lib/mnl/mjson.h \
-  ../../moon/lib/mnl/mbson.h ../../moon/lib/mnl/mhttp.h \
-  ../../moon/lib/mnl/mdb.h ../../moon/lib/mnl/mmg.h lheads.h lnum.h \
-  ltypes.h lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
-  ../../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
+  ../moon/lib/mnl/mglobal.h ../moon/lib/mnl/mheads.h \
+  ../moon/lib/mnl/mtimer.h ../moon/lib/mnl/mcfg.h ../moon/lib/mnl/md5.h \
+  ../moon/lib/mnl/mb64.h ../moon/lib/mnl/mmkd.h ../moon/lib/mnl/mcs.h \
+  ../moon/lib/mnl/mstr.h ../moon/lib/mnl/mutil.h \
+  ../moon/lib/mnl/mtemplate.h ../moon/lib/mnl/mfile.h \
+  ../moon/lib/mnl/mimg.h ../moon/lib/mnl/mtrace.h ../moon/lib/mnl/mmemc.h \
+  ../moon/lib/mnl/mjson.h ../moon/lib/mnl/mbson.h ../moon/lib/mnl/mhttp.h \
+  ../moon/lib/mnl/mdb.h ../moon/lib/mnl/mmg.h lheads.h lnum.h ltypes.h \
+  lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
+  ../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
   ../xport/plugin/mevent_plan.h ../xport/plugin/mevent_city.h \
   ../xport/plugin/mevent_aux.h ../xport/plugin/mevent_fft.h \
-  ../xport/plugin/mevent_trace.h ../walk/ozero.h \
-  ../../moon/lib/mnl/mheads.h ../walk/ospd.h ../walk/opos.h \
-  ../walk/oplan.h ../walk/omember.h ../walk/obore.h ../walk/ocomment.h \
-  ../walk/oinbox.h ../walk/oemail.h ../walk/otrace.h ../walk/osystem.h
-lutil.o: lutil.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
+  ../xport/plugin/mevent_trace.h ../walk/ozero.h ../moon/lib/mnl/mheads.h \
+  ../walk/ospd.h ../walk/opos.h ../walk/oplan.h ../walk/omember.h \
+  ../walk/obore.h ../walk/ocomment.h ../walk/oinbox.h ../walk/oemail.h \
+  ../walk/otrace.h ../walk/osystem.h
+lutil.o: lutil.c ../moon/lib/mnl/mheads.h ../moon/lib/mbase.h \
   /usr/local/include/ClearSilver/ClearSilver.h \
   /usr/local/include/ClearSilver/cs_config.h \
   /usr/local/include/ClearSilver/util/neo_misc.h \
@@ -1211,12 +1196,11 @@ lutil.o: lutil.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/version.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/sasl.h \
   /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/deprecated_types.h \
-  ../../moon/lib/mevent/mevent.h ../../moon/lib/mevent/net-const.h \
-  /usr/local/include/ClearSilver/ClearSilver.h \
-  ../../moon/lib/mevent/cache.h /usr/local/include/json/json.h \
-  /usr/local/include/json/bits.h /usr/local/include/json/debug.h \
-  /usr/local/include/json/linkhash.h /usr/local/include/json/arraylist.h \
-  /usr/local/include/json/json_util.h \
+  ../moon/lib/mevent/mevent.h ../moon/lib/mevent/net-const.h \
+  /usr/local/include/ClearSilver/ClearSilver.h ../moon/lib/mevent/cache.h \
+  /usr/local/include/json/json.h /usr/local/include/json/bits.h \
+  /usr/local/include/json/debug.h /usr/local/include/json/linkhash.h \
+  /usr/local/include/json/arraylist.h /usr/local/include/json/json_util.h \
   /usr/local/include/json/json_object.h \
   /usr/local/include/json/json_tokener.h \
   /usr/local/include/mongo-client/mongo.h \
@@ -1306,21 +1290,19 @@ lutil.o: lutil.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
   /usr/local/include/mongo-client/sync-gridfs.h \
   /usr/local/include/mongo-client/sync-gridfs-chunk.h \
   /usr/local/include/mongo-client/sync-gridfs-stream.h \
-  ../../moon/lib/mnl/mglobal.h ../../moon/lib/mnl/mheads.h \
-  ../../moon/lib/mnl/mtimer.h ../../moon/lib/mnl/mcfg.h \
-  ../../moon/lib/mnl/md5.h ../../moon/lib/mnl/mb64.h \
-  ../../moon/lib/mnl/mmkd.h ../../moon/lib/mnl/mcs.h \
-  ../../moon/lib/mnl/mstr.h ../../moon/lib/mnl/mutil.h \
-  ../../moon/lib/mnl/mtemplate.h ../../moon/lib/mnl/mfile.h \
-  ../../moon/lib/mnl/mimg.h ../../moon/lib/mnl/mtrace.h \
-  ../../moon/lib/mnl/mmemc.h ../../moon/lib/mnl/mjson.h \
-  ../../moon/lib/mnl/mbson.h ../../moon/lib/mnl/mhttp.h \
-  ../../moon/lib/mnl/mdb.h ../../moon/lib/mnl/mmg.h lheads.h lnum.h \
-  ltypes.h lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
-  ../../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
+  ../moon/lib/mnl/mglobal.h ../moon/lib/mnl/mheads.h \
+  ../moon/lib/mnl/mtimer.h ../moon/lib/mnl/mcfg.h ../moon/lib/mnl/md5.h \
+  ../moon/lib/mnl/mb64.h ../moon/lib/mnl/mmkd.h ../moon/lib/mnl/mcs.h \
+  ../moon/lib/mnl/mstr.h ../moon/lib/mnl/mutil.h \
+  ../moon/lib/mnl/mtemplate.h ../moon/lib/mnl/mfile.h \
+  ../moon/lib/mnl/mimg.h ../moon/lib/mnl/mtrace.h ../moon/lib/mnl/mmemc.h \
+  ../moon/lib/mnl/mjson.h ../moon/lib/mnl/mbson.h ../moon/lib/mnl/mhttp.h \
+  ../moon/lib/mnl/mdb.h ../moon/lib/mnl/mmg.h lheads.h lnum.h ltypes.h \
+  lerr.h ldb.h levt.h lcfg.h lutil.h ltpl.h lcs.h \
+  ../moon/lib/mevent/mevent.h ../xport/plugin/mevent_member.h \
   ../xport/plugin/mevent_plan.h ../xport/plugin/mevent_city.h \
   ../xport/plugin/mevent_aux.h ../xport/plugin/mevent_fft.h \
-  ../xport/plugin/mevent_trace.h ../walk/ozero.h \
-  ../../moon/lib/mnl/mheads.h ../walk/ospd.h ../walk/opos.h \
-  ../walk/oplan.h ../walk/omember.h ../walk/obore.h ../walk/ocomment.h \
-  ../walk/oinbox.h ../walk/oemail.h ../walk/otrace.h ../walk/osystem.h
+  ../xport/plugin/mevent_trace.h ../walk/ozero.h ../moon/lib/mnl/mheads.h \
+  ../walk/ospd.h ../walk/opos.h ../walk/oplan.h ../walk/omember.h \
+  ../walk/obore.h ../walk/ocomment.h ../walk/oinbox.h ../walk/oemail.h \
+  ../walk/otrace.h ../walk/osystem.h
