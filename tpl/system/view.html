@@ -1,0 +1,59 @@
+<?cs include:"system/nav.html" ?>
+
+<div class="system-content">
+  <form method="post" action="/system/view" enctype="multipart/form-data">
+    <dl class="oneline">
+      <dt>开始日期：</dt>
+      <dd>
+        <input type="text" name="times" class="datep shorter" value="<?cs var: Query.times ?>" />
+      </dd>
+      <dt>结束日期：</dt>
+      <dd>
+        <input type="text" name="timee" class="datep shorter" value="<?cs var: Query.timee ?>" />
+      </dd>
+      <dt>&nbsp;</dt>
+      <dd><input type="submit" class="btn" value="查询" /></dd>
+    </dl>
+  </form>
+
+  <div class="sep"></div>
+  <h3>访问量走势图</h3>
+  <div id="viewpic" class="flot-move">
+  </div>
+
+  <div class="sep"></div>
+  <h3>用户量详情</h3>
+  <div id="viewwho">
+  </div>
+
+  <div class="sep"></div>
+  <h3>用户访问页面详情</h3>
+  <div id="viewdetail">
+  </div>
+</div>
+
+<script>
+  var mgd = mgd || {};
+
+  mgd.pageviews = [];
+  <?cs each: v=Output.pageviews ?>
+  mgd.pageviews.push([<?cs var:v.msec ?>, <?cs var:v.count ?>]);
+  <?cs /each ?>
+  
+  mgd.userviews = [];
+  <?cs each: v=Output.userviews ?>
+  mgd.userviews.push([<?cs var:v.msec ?>, <?cs var:v.count ?>]);
+  <?cs /each ?>
+
+  mgd.dateviews = [];
+  <?cs each: v=Output.dateviews ?>
+  mgd.dateviews.push([<?cs var:v.msec ?>, <?cs var:v.count ?>]);
+  <?cs /each ?>
+
+  mgd.dateusers = [];
+  <?cs each: v=Output.dateusers ?>
+  mgd.dateusers.push([<?cs var:v.msec ?>, <?cs var:v.count ?>]);
+  <?cs /each ?>
+
+  mgd._done = 1;
+</script>

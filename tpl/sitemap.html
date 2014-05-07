@@ -1,0 +1,33 @@
+<h2>站点功能</h2>
+<ul>
+  <li><a href="/index.html">拼车</a></li>
+  <li><a href="/member/regist.html">用户注册</a></li>
+  <li><a href="/member/reset.html">找回密码</a></li>
+  <li><a href="/bore">随便逛逛</a></li>
+  <li><a href="/readme.html">关于我们</a></li>
+</ul>
+
+<h2>最新拼车信息</h2>
+<ul>
+  <?cs each:p=Output.plans ?>
+  <li>
+    <a href="/plan/info?id=<?cs var:p.id ?>" title="<?cs var:p.saddr ?>至<?cs var:p.eaddr ?>拼车,拼车回<?cs var:p.eaddr ?>">
+      <?cs var:p.nick ?>邀人<?cs var:p.sdate ?>从<?cs var:p.saddr ?>拼车回<?cs var:p.eaddr ?>
+    </a>
+  </li>
+  <?cs /each ?>
+</ul>
+
+<!--
+<h2>历史拼车信息</h2>
+<ul>
+  <?cs each:p=Output.plans.recent ?>
+  <li>
+    <a href="/plan/info?id=<?cs var:p.id ?>" title="<?cs var:p.saddr ?> <?cs var:p.eaddr ?> 拼车">
+      <?cs var:p.nick ?>邀人<?cs var:p.sdate ?>从 <?cs var:p.saddr ?> 至 <?cs
+      var:p.eaddr ?> 进行拼车
+    </a>
+  </li>
+  <?cs /each ?>
+</ul>
+-->

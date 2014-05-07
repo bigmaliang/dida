@@ -1,0 +1,34 @@
+.tipsy {
+    background-repeat: no-repeat;
+    font-size: 11px;
+    opacity: 0.8;
+    padding: 5px;
+    text-shadow: 1px 1px 0 #000000;
+}
+.tipsy-inner {
+    background-color: black;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    max-width: 235px;
+    padding: 5px 8px 4px;
+    text-align: center;
+}
+.tipsy-north {
+    background-image: url("/img/modules/tooltip/tipsy-north.gif");
+    background-position: center top;
+}
+.tipsy-south {
+    background-image: url("/img/modules/tooltip/tipsy-south.gif");
+    background-position: center bottom;
+}
+.tipsy-east {
+    background-image: url("/img/modules/tooltip/tipsy-east.gif");
+    background-position: right center;
+}
+.tipsy-west {
+    background-image: url("/img/modules/tooltip/tipsy-west.gif");
+    background-position: left center;
+}
+.tipsy-west .tipsy-inner {
+    text-align: left;
+}

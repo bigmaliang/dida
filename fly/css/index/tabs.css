@@ -1,0 +1,57 @@
+/* root element for tabs  */
+.tabs {  
+	margin:0 !important; 
+	padding:0;
+	height:28px;
+	border-bottom:1px solid #ddd;
+}
+
+/* single tab */
+.tabs li {  
+	float:left;	 
+	padding:0; 
+	margin:0;  
+	list-style-type:none;	
+}
+
+/* link inside the tab. uses a background image */
+.tabs a { 
+	float:left;
+	display:block;
+	padding:5px 30px;	
+	text-decoration:none;
+	border:1px solid #ddd;	
+	border-bottom:0px;
+	background-color:#fff;
+	color:#777;
+	margin-right:2px;	
+	position:relative;
+	top:1px;	
+	outline:none;
+	-moz-border-radius:4px 4px 0 0;
+	border-radius:4px 4px 0 0;
+}
+
+.tabs a:hover {
+	background-color:#fcfcfc;
+	color:#333;
+}
+	
+/* selected tab */
+.tabs a.current {
+	background-color:#fcfcfc;
+	border-bottom:2px solid #fcfcfc;	
+	color:#000;	
+	cursor:default;
+}
+
+	
+/* tab pane */
+.pane {
+	display:none;
+	border:1px solid #ddd;
+	border-width:0 1px 1px 1px;
+	min-height:150px;
+	padding:15px 20px;
+	background-color:#fcfcfc;	
+}

@@ -1,0 +1,5 @@
+<p>以下路线可能与您的出行路线重合，建议你看看。</p>
+
+<?cs each:plan = Output.plans ?>
+<a href="/plan/info?id=<?cs var:plan.id ?>"><?cs var:plan.id ?></a>
+<?cs /each ?>

@@ -1,0 +1,11 @@
+<ul id="bd-4mineral">
+  <?cs each:p=Output.plans ?>
+  <li>
+    <h2>
+      <a href="/plan/info?id=<?cs var:p.id ?>" title="<?cs var:p.saddr ?>到<?cs var:p.eaddr ?>拼车,拼车去<?cs var:p.eaddr ?>">
+        <?cs var:p.nick ?> 邀人 <?cs var:p.sdate ?>从<?cs var:p.saddr ?>拼车去<?cs var:p.eaddr ?>
+      </a>
+    </h2>
+  </li>
+  <?cs /each ?>
+</ul>

@@ -1,0 +1,9 @@
+PlanMatched {
+    Layout {
+        message = inbox/planmatched.html
+    }
+	Valueset {
+    	fmid = 0
+        fnick = 嘀嗒
+    }
+}

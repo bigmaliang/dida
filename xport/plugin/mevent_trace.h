@@ -1,0 +1,25 @@
+#ifndef __MEVENT_TRACE_H__
+#define __MEVENT_TRACE_H__
+
+#define PREFIX_TRACE     "Trace"
+
+enum {
+    TRACE_TYPE_PAGEVIEW = 0,
+
+    TRACE_TYPE_PLAN_SEARCH = 11,
+    TRACE_TYPE_PLAN_LEAVE,
+    TRACE_TYPE_PLAN_MODIFY,
+    TRACE_TYPE_PLAN_SPD,
+
+    TRACE_TYPE_MEMBER_REG = 51,
+    TRACE_TYPE_MEMBER_MSG,
+
+    TRACE_TYPE_COMMENT_ADD = 71
+};
+
+enum {
+    REQ_CMD_TRACE_GET = 1001,
+    REQ_CMD_TRACE_ADD
+};
+
+#endif    /* __MEVENT_TRACE_H__ */

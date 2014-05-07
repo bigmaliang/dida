@@ -1,0 +1,446 @@
+sitemap.o: sitemap.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
+  /usr/local/include/ClearSilver/ClearSilver.h \
+  /usr/local/include/ClearSilver/cs_config.h \
+  /usr/local/include/ClearSilver/util/neo_misc.h \
+  /usr/local/include/ClearSilver/util/neo_err.h \
+  /usr/local/include/ClearSilver/util/neo_misc.h \
+  /usr/local/include/ClearSilver/util/neo_str.h \
+  /usr/local/include/ClearSilver/util/ulist.h \
+  /usr/local/include/ClearSilver/util/neo_err.h \
+  /usr/local/include/ClearSilver/util/neo_date.h \
+  /usr/local/include/ClearSilver/util/neo_files.h \
+  /usr/local/include/ClearSilver/util/neo_hash.h \
+  /usr/local/include/ClearSilver/util/neo_hdf.h \
+  /usr/local/include/ClearSilver/util/neo_hash.h \
+  /usr/local/include/ClearSilver/util/neo_rand.h \
+  /usr/local/include/ClearSilver/util/neo_net.h \
+  /usr/local/include/ClearSilver/util/neo_server.h \
+  /usr/local/include/ClearSilver/util/neo_str.h \
+  /usr/local/include/ClearSilver/util/ulist.h \
+  /usr/local/include/ClearSilver/util/wildmat.h \
+  /usr/local/include/ClearSilver/util/filter.h \
+  /usr/local/include/ClearSilver/util/ulocks.h \
+  /usr/local/include/ClearSilver/util/rcfs.h \
+  /usr/local/include/ClearSilver/util/skiplist.h \
+  /usr/local/include/ClearSilver/util/dict.h \
+  /usr/local/include/ClearSilver/cs/cs.h \
+  /usr/local/include/ClearSilver/util/neo_misc.h \
+  /usr/local/include/ClearSilver/util/neo_err.h \
+  /usr/local/include/ClearSilver/util/ulist.h \
+  /usr/local/include/ClearSilver/util/neo_hdf.h \
+  /usr/local/include/ClearSilver/util/neo_str.h \
+  /usr/local/include/ClearSilver/util/neo_auto.h \
+  /usr/local/include/ClearSilver/cgi/cgi.h \
+  /usr/local/include/ClearSilver/util/neo_err.h \
+  /usr/local/include/ClearSilver/util/neo_hdf.h \
+  /usr/local/include/ClearSilver/cs/cs.h \
+  /usr/local/include/ClearSilver/cgi/cgiwrap.h \
+  /usr/local/include/ClearSilver/cgi/date.h \
+  /usr/local/include/ClearSilver/cgi/html.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached/memcached.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/memcached.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/visibility.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/configure.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/platform.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/limits.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/defaults.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/behavior.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/callback.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/connection.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/hash.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/return.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/server_distribution.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/return.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/callbacks.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/alloc.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/triggers.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/hashkit.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/visibility.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/configure.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/types.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/has.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/algorithm.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/behavior.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/digest.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/function.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/str_algorithm.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/strerror.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/string.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/callback.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/string.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/result.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/allocator.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/sasl.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/memcached.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/server.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/stat.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/basic_string.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/error.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/stats.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/allocators.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/analyze.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/analysis.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/auto.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/behavior.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/callback.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/delete.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/dump.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/encoding_key.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/exist.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/fetch.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/flush.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/flush_buffers.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/get.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/hash.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/options.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/parse.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/quit.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/result.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/server.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/server_list.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/storage.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/strerror.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/touch.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/verbosity.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/version.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/sasl.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/deprecated_types.h \
+  ../../moon/lib/mevent/mevent.h ../../moon/lib/mevent/net-const.h \
+  /usr/local/include/ClearSilver/ClearSilver.h \
+  ../../moon/lib/mevent/cache.h /usr/local/include/json/json.h \
+  /usr/local/include/json/bits.h /usr/local/include/json/debug.h \
+  /usr/local/include/json/linkhash.h /usr/local/include/json/arraylist.h \
+  /usr/local/include/json/json_util.h \
+  /usr/local/include/json/json_object.h \
+  /usr/local/include/json/json_tokener.h \
+  /usr/local/include/mongo-client/mongo.h \
+  /usr/local/include/mongo-client/bson.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/galloca.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtypes.h \
+  /usr/local/Cellar/glib/2.34.1/lib/glib-2.0/include/glibconfig.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmacros.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gversionmacros.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/garray.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gasyncqueue.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gthread.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gatomic.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gerror.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gquark.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gbacktrace.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gbase64.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gbitlock.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gbookmarkfile.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gbytes.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gcharset.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gchecksum.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gconvert.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gdataset.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gdate.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gdatetime.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtimezone.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gdir.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/genviron.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gfileutils.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/ggettext.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/ghash.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/glist.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmem.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gnode.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/ghmac.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gchecksum.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/ghook.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/ghostutils.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/giochannel.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmain.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gpoll.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gslist.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gstring.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gunicode.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gutils.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gkeyfile.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmappedfile.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmarkup.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmessages.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/goption.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gpattern.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gprimes.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gqsort.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gqueue.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/grand.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gregex.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gscanner.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gsequence.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gshell.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gslice.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gspawn.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gstrfuncs.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gstringchunk.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtestutils.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gthreadpool.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtimer.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtrashstack.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtree.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gurifuncs.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gvarianttype.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gvariant.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gversion.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/gallocator.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/gcache.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/gcompletion.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/gmain.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/grel.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/gthread.h \
+  /usr/local/include/mongo-client/mongo-wire.h \
+  /usr/local/include/mongo-client/mongo-client.h \
+  /usr/local/include/mongo-client/mongo-utils.h \
+  /usr/local/include/mongo-client/mongo-sync.h \
+  /usr/local/include/mongo-client/mongo-sync-cursor.h \
+  /usr/local/include/mongo-client/mongo-sync-pool.h \
+  /usr/local/include/mongo-client/sync-gridfs.h \
+  /usr/local/include/mongo-client/sync-gridfs-chunk.h \
+  /usr/local/include/mongo-client/sync-gridfs-stream.h \
+  ../../moon/lib/mnl/mglobal.h ../../moon/lib/mnl/mheads.h \
+  ../../moon/lib/mnl/mtimer.h ../../moon/lib/mnl/mcfg.h \
+  ../../moon/lib/mnl/md5.h ../../moon/lib/mnl/mb64.h \
+  ../../moon/lib/mnl/mmkd.h ../../moon/lib/mnl/mcs.h \
+  ../../moon/lib/mnl/mstr.h ../../moon/lib/mnl/mutil.h \
+  ../../moon/lib/mnl/mtemplate.h ../../moon/lib/mnl/mfile.h \
+  ../../moon/lib/mnl/mimg.h ../../moon/lib/mnl/mtrace.h \
+  ../../moon/lib/mnl/mmemc.h ../../moon/lib/mnl/mjson.h \
+  ../../moon/lib/mnl/mbson.h ../../moon/lib/mnl/mhttp.h \
+  ../../moon/lib/mnl/mdb.h ../../moon/lib/mnl/mmg.h ../pub/lheads.h \
+  ../pub/lnum.h ../../moon/lib/mnl/mheads.h ../pub/ltypes.h ../pub/lerr.h \
+  ../pub/ldb.h ../pub/levt.h ../pub/lcfg.h ../pub/lutil.h ../pub/ltpl.h \
+  ../pub/lcs.h ../../moon/lib/mevent/mevent.h \
+  ../xport/plugin/mevent_member.h ../xport/plugin/mevent_plan.h \
+  ../xport/plugin/mevent_city.h ../xport/plugin/mevent_aux.h \
+  ../xport/plugin/mevent_fft.h ../xport/plugin/mevent_trace.h \
+  ../walk/ozero.h ../../moon/lib/mnl/mheads.h ../walk/ospd.h \
+  ../walk/opos.h ../walk/oplan.h ../walk/omember.h ../walk/obore.h \
+  ../walk/ocomment.h ../walk/oinbox.h ../walk/oemail.h ../walk/otrace.h \
+  ../walk/osystem.h
+static.o: static.c ../../moon/lib/mnl/mheads.h ../../moon/lib/mbase.h \
+  /usr/local/include/ClearSilver/ClearSilver.h \
+  /usr/local/include/ClearSilver/cs_config.h \
+  /usr/local/include/ClearSilver/util/neo_misc.h \
+  /usr/local/include/ClearSilver/util/neo_err.h \
+  /usr/local/include/ClearSilver/util/neo_misc.h \
+  /usr/local/include/ClearSilver/util/neo_str.h \
+  /usr/local/include/ClearSilver/util/ulist.h \
+  /usr/local/include/ClearSilver/util/neo_err.h \
+  /usr/local/include/ClearSilver/util/neo_date.h \
+  /usr/local/include/ClearSilver/util/neo_files.h \
+  /usr/local/include/ClearSilver/util/neo_hash.h \
+  /usr/local/include/ClearSilver/util/neo_hdf.h \
+  /usr/local/include/ClearSilver/util/neo_hash.h \
+  /usr/local/include/ClearSilver/util/neo_rand.h \
+  /usr/local/include/ClearSilver/util/neo_net.h \
+  /usr/local/include/ClearSilver/util/neo_server.h \
+  /usr/local/include/ClearSilver/util/neo_str.h \
+  /usr/local/include/ClearSilver/util/ulist.h \
+  /usr/local/include/ClearSilver/util/wildmat.h \
+  /usr/local/include/ClearSilver/util/filter.h \
+  /usr/local/include/ClearSilver/util/ulocks.h \
+  /usr/local/include/ClearSilver/util/rcfs.h \
+  /usr/local/include/ClearSilver/util/skiplist.h \
+  /usr/local/include/ClearSilver/util/dict.h \
+  /usr/local/include/ClearSilver/cs/cs.h \
+  /usr/local/include/ClearSilver/util/neo_misc.h \
+  /usr/local/include/ClearSilver/util/neo_err.h \
+  /usr/local/include/ClearSilver/util/ulist.h \
+  /usr/local/include/ClearSilver/util/neo_hdf.h \
+  /usr/local/include/ClearSilver/util/neo_str.h \
+  /usr/local/include/ClearSilver/util/neo_auto.h \
+  /usr/local/include/ClearSilver/cgi/cgi.h \
+  /usr/local/include/ClearSilver/util/neo_err.h \
+  /usr/local/include/ClearSilver/util/neo_hdf.h \
+  /usr/local/include/ClearSilver/cs/cs.h \
+  /usr/local/include/ClearSilver/cgi/cgiwrap.h \
+  /usr/local/include/ClearSilver/cgi/date.h \
+  /usr/local/include/ClearSilver/cgi/html.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached/memcached.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/memcached.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/visibility.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/configure.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/platform.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/limits.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/defaults.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/behavior.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/callback.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/connection.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/hash.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/return.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types/server_distribution.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/return.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/types.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/callbacks.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/alloc.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/triggers.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/hashkit.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/visibility.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/configure.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/types.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/has.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/algorithm.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/behavior.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/digest.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/function.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/str_algorithm.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/strerror.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libhashkit-1.0/string.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/callback.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/string.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/result.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/allocator.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/sasl.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/memcached.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/server.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/stat.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/basic_string.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/error.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/stats.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/allocators.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/analyze.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/struct/analysis.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/auto.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/behavior.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/callback.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/delete.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/dump.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/encoding_key.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/exist.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/fetch.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/flush.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/flush_buffers.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/get.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/hash.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/options.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/parse.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/quit.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/result.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/server.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/server_list.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/storage.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/strerror.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/touch.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/verbosity.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/version.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/sasl.h \
+  /usr/local/Cellar/libmemcached/1.0.8/include/libmemcached-1.0/deprecated_types.h \
+  ../../moon/lib/mevent/mevent.h ../../moon/lib/mevent/net-const.h \
+  /usr/local/include/ClearSilver/ClearSilver.h \
+  ../../moon/lib/mevent/cache.h /usr/local/include/json/json.h \
+  /usr/local/include/json/bits.h /usr/local/include/json/debug.h \
+  /usr/local/include/json/linkhash.h /usr/local/include/json/arraylist.h \
+  /usr/local/include/json/json_util.h \
+  /usr/local/include/json/json_object.h \
+  /usr/local/include/json/json_tokener.h \
+  /usr/local/include/mongo-client/mongo.h \
+  /usr/local/include/mongo-client/bson.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/galloca.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtypes.h \
+  /usr/local/Cellar/glib/2.34.1/lib/glib-2.0/include/glibconfig.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmacros.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gversionmacros.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/garray.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gasyncqueue.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gthread.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gatomic.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gerror.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gquark.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gbacktrace.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gbase64.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gbitlock.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gbookmarkfile.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gbytes.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gcharset.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gchecksum.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gconvert.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gdataset.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gdate.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gdatetime.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtimezone.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gdir.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/genviron.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gfileutils.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/ggettext.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/ghash.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/glist.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmem.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gnode.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/ghmac.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gchecksum.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/ghook.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/ghostutils.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/giochannel.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmain.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gpoll.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gslist.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gstring.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gunicode.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gutils.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gkeyfile.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmappedfile.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmarkup.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gmessages.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/goption.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gpattern.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gprimes.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gqsort.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gqueue.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/grand.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gregex.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gscanner.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gsequence.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gshell.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gslice.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gspawn.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gstrfuncs.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gstringchunk.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtestutils.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gthreadpool.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtimer.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtrashstack.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gtree.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gurifuncs.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gvarianttype.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gvariant.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/gversion.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/gallocator.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/gcache.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/gcompletion.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/gmain.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/grel.h \
+  /usr/local/Cellar/glib/2.34.1/include/glib-2.0/glib/deprecated/gthread.h \
+  /usr/local/include/mongo-client/mongo-wire.h \
+  /usr/local/include/mongo-client/mongo-client.h \
+  /usr/local/include/mongo-client/mongo-utils.h \
+  /usr/local/include/mongo-client/mongo-sync.h \
+  /usr/local/include/mongo-client/mongo-sync-cursor.h \
+  /usr/local/include/mongo-client/mongo-sync-pool.h \
+  /usr/local/include/mongo-client/sync-gridfs.h \
+  /usr/local/include/mongo-client/sync-gridfs-chunk.h \
+  /usr/local/include/mongo-client/sync-gridfs-stream.h \
+  ../../moon/lib/mnl/mglobal.h ../../moon/lib/mnl/mheads.h \
+  ../../moon/lib/mnl/mtimer.h ../../moon/lib/mnl/mcfg.h \
+  ../../moon/lib/mnl/md5.h ../../moon/lib/mnl/mb64.h \
+  ../../moon/lib/mnl/mmkd.h ../../moon/lib/mnl/mcs.h \
+  ../../moon/lib/mnl/mstr.h ../../moon/lib/mnl/mutil.h \
+  ../../moon/lib/mnl/mtemplate.h ../../moon/lib/mnl/mfile.h \
+  ../../moon/lib/mnl/mimg.h ../../moon/lib/mnl/mtrace.h \
+  ../../moon/lib/mnl/mmemc.h ../../moon/lib/mnl/mjson.h \
+  ../../moon/lib/mnl/mbson.h ../../moon/lib/mnl/mhttp.h \
+  ../../moon/lib/mnl/mdb.h ../../moon/lib/mnl/mmg.h ../pub/lheads.h \
+  ../pub/lnum.h ../../moon/lib/mnl/mheads.h ../pub/ltypes.h ../pub/lerr.h \
+  ../pub/ldb.h ../pub/levt.h ../pub/lcfg.h ../pub/lutil.h ../pub/ltpl.h \
+  ../pub/lcs.h ../../moon/lib/mevent/mevent.h \
+  ../xport/plugin/mevent_member.h ../xport/plugin/mevent_plan.h \
+  ../xport/plugin/mevent_city.h ../xport/plugin/mevent_aux.h \
+  ../xport/plugin/mevent_fft.h ../xport/plugin/mevent_trace.h \
+  ../walk/ozero.h ../../moon/lib/mnl/mheads.h ../walk/ospd.h \
+  ../walk/opos.h ../walk/oplan.h ../walk/omember.h ../walk/obore.h \
+  ../walk/ocomment.h ../walk/oinbox.h ../walk/oemail.h ../walk/otrace.h \
+  ../walk/osystem.h

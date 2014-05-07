@@ -1,0 +1,60 @@
+dl.inp {font-weight: bold;}
+
+#mc-result {
+    line-height: 28px;
+    font-weight: normal;
+}
+
+#mc-result dt, #mc-result dd {
+    margin: 2px;
+}
+
+#mc-result dd {
+    width: 650px;
+    text-align: left;
+}
+
+#mc-result img {
+    vertical-align: middle;
+}
+
+#mc-result span {
+    font-weight: bold;
+    margin-left: 0;
+}
+
+#mc-no-attach {
+    width: 545px;
+    height: 70px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+#timestamp {
+	-moz-border-radius:5px;
+	background-color:#36387B;
+	color:#FFFFFF;
+	float:left;
+	height:117px;
+	padding:40px 60px;
+	text-shadow:0 0 5px #DDDDDD;
+	text-align:center;
+	width:117px;
+}
+
+#timestamp span {
+	display:block;
+	font-size:16px;
+    margin-top:40px;
+}
+
+#timestamp .top {
+    margin: 0 auto;
+}
+
+#timestamp .mid {
+	font-size:90px;
+}

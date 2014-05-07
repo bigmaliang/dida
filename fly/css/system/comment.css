@@ -1,0 +1,23 @@
+.boxed-group-list .del {
+    float: right;
+    padding-right: 0.5em;
+}
+
+.boxed-group-list .title {
+    font-weight: bold;
+    padding: 0 0 0.25em;
+}
+
+.boxed-group-list .details {
+    margin-left: 1em;
+}
+
+.boxed-group-list p.pre {
+    margin: 0 10px;
+    white-space: pre-wrap;       /* css 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla*/
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    *white-space: pre;
+    word-wrap: break-word;       /* IE 5.5?? */
+}

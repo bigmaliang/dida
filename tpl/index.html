@@ -1,0 +1,184 @@
+<!--<?cs include:"plan/4mineral.html" ?>-->
+
+<dl class="inp">
+  <dt>于</dt>
+
+  <dd>
+    <input type="date" id="date-input" name="departure" value="0" />
+    <span id="date-hint">今天</span>
+    <span>
+      <select id="hour">
+        <option value="08" selected="selected">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="00">00</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+      </select>
+      ：
+      <select id="min">
+        <option value="00" selected="selected">00</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+      </select>
+    </span>
+
+    <span>
+      <select id="dad">
+        <option value="1" selected="selected">找车</option>
+        <option value="0">邀人</option>
+      </select>
+    </span>
+  </dd>
+  
+  <dt>
+    从
+  </dt>
+  <dd>
+    <input type="text" class="llong" id="saddr" placeholder="输入起点" />
+    <span id="km" class="slight"></span>
+  </dd>
+
+  <dt>
+    出发至
+  </dt>
+  <dd>
+    <input type="text" class="llong" id="eaddr" placeholder="输入终点" />
+    &nbsp; <input type="button" id="submit" value="搜索" />
+    <span class="indicator"></span>
+
+    <span class="hide" id="mc-nav">
+        <a class="hide" href="javascript:void(0);" id="mc-prev">上一条</a>
+        第 <span id="mc-num-nav" class="decimal"></span>
+        <span>条线路</span>
+        <a class="hide" href="javascript:void(0);" id="mc-next">下一条</a>
+        <span><a href="javascript:void(0);" id="mc-continue">对结果不满意</a></span>
+    </span>
+  </dd>
+
+  <dt>&nbsp;</dt>
+  <dd id="map-hint" class="slight hide">(拖动线路图标设置精确地址)</dd>
+
+  <div class="clearer"></div>
+
+</dl>
+
+<dl class="page-hint inp hide" id="mc-result">
+
+  <dt>路线：</dt>
+  <dd>
+    <span id="mc-saddr"></span> 至 <span id="mc-eaddr"></span>
+    <span><a target="_blank" id="mc-planurl">此线路连接</a></span>
+
+    <a id="mc-del" class="fright hide" title="垃圾线路，不再搜到"><img src="/img/bg/delete.png" /></a>
+    <a id="mc-from" class="fright" target="_blank" ></a>
+  </dd>
+
+  <dt>出发时间：</dt>
+  <dd>
+    <span id="mc-sdate"></span> <span id="mc-stime"></span>
+  </dd>
+  
+  <dt>联系人：</dt>
+  <dd>
+    <span id="mc-nick"></span>
+    <img id="mc-phone" src="" />
+    <img id="mc-contact" src="" />
+  </dd>
+
+  <dt>留言：</dt>
+  <dd>
+    <span><pre id="mc-attach"></pre></span>
+  </dd>
+  
+  <div class="clearer"></div>
+</dl>
+
+<div class="page-hint hide" id="mc-noresult">
+  <p>
+    没有合适的路线，建议您留下信息，以便他人联系：
+  </p>
+  <dl class="inp">
+    <dt>我的需求：</dt>
+    <dd>
+      <select id="mc-no-repeat">
+        <option value="0">仅此一次</option>
+        <option value="1">每天都有</option>
+        <option value="2">每周都有</option>
+      </select>
+      <span id="mc-no-wday" class="hide">
+        星期
+        &nbsp; <input type="checkbox" name="wday" value="1" /> 一
+        &nbsp; <input type="checkbox" name="wday" value="2" /> 二
+        &nbsp; <input type="checkbox" name="wday" value="3" /> 三
+        &nbsp; <input type="checkbox" name="wday" value="4" /> 四
+        &nbsp; <input type="checkbox" name="wday" value="5" /> 五
+        &nbsp; <input type="checkbox" name="wday" value="6" /> 六
+        &nbsp; <input type="checkbox" name="wday" value="7" /> 日
+        </span>
+    </dd>
+    
+    <dt>电话：</dt>
+    <dd>
+      <input type="text" class="VAL_LEAVE vphone vrequire" id="mc-no-phone" />*
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      邮箱/QQ： <input type="text" class="VAL_SUB_EMAIL vemail vrequire" id="mc-no-contact" />
+    </dd>
+      
+    <dt>称呼：</dt>
+    <dd>
+      <input type="text" id="mc-no-nick" />
+    </dd>
+      
+    <dt>留言：</dt>
+    <dd>
+      <textarea id="mc-no-attach"></textarea>
+    </dd>
+
+    <dt>&nbsp;</dt>
+    <dd>
+      <!--<input type="checkbox" name="subscribe" inpcheck="VAL_LEAVE" value="1" /> 短信订阅该线路
+      <span></span>-->
+      <input type="checkbox" name="subscribe" inpcheck="VAL_SUB_EMAIL" value="2" /> 邮件订阅该线路
+    </dd>
+
+    <dt>&nbsp;</dt>
+    <dd>
+      <input type="button" id="mc-no-submit" value="提交" />
+      <span class="indicator"></span>
+    </dd>
+  </dl>
+
+  <div class="clearer"></div>
+</div>
+
+<div id="map"></div>
+
+<!--
+<div id="timestamp">
+  <span class="top"></span>
+  <span class="mid"></span>
+  <span class="bot"></span>
+</div>
+-->

@@ -1,0 +1,25 @@
+404 {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            title = 找不到页面
+        }
+        # include will be ignore by laytou.html if dater return error
+        Include {
+            content = http/404.html
+        }
+    }
+}
+
+503 {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            title = 程序内部错误
+        }
+        # include will be ignore by laytou.html if dater return error
+        Include {
+            content = http/503.html
+        }
+    }
+}

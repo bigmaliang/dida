@@ -1,0 +1,10 @@
+http://www.sikayetvar.com/images/images_yeni/header.png
+
+http://www.sikayetvar.com/images/images_yeni/sv_sprite.png
+
+
+http://www.sikayetvar.com/res/plugins/colorbox/images/x.png
+
+http://www.sikayetvar.com/res/plugins/jqtransform/img/input/input_text_left.gif
+
+http://www.sikayetvar.com/res/plugins/jqtransform/img/input/input_text_right.gif

@@ -1,0 +1,44 @@
+<h2>改写记忆</h2>
+
+<?cs escape: "html" ?>
+<dl class="boreop">
+  <dt>标题 (1 ~ 128 个字)</dt>
+  <dd>
+    <input type="text" id="title" class="title VAL_NEWBORE vrequire" vmax="256" value="<?cs var: Output.memory.title ?>" />
+  </dd>
+
+  <dt>副标题</dt>
+  <dd>
+    <input type="text" id="hint" class="hint VAL_NEWBORE vrequire" vmax="256" value="<?cs var: Output.memory.hint ?>" />
+  </dd>
+  
+  <dt>内容</dt>
+  <dd>
+    <textarea id="content" draggable="true" class="content VAL_NEWBORE vrequire"><?cs var: Output.memory.content ?></textarea>
+  </dd>
+
+  <dt>&nbsp;</dt>
+  <dd>
+    <input type="button" id="submit" class="submitbtn" value="提交" />
+    <?cs if: ?Output.memory.title ?>
+    <?cs if: Output.memory.statu == #0 ?>
+    &nbsp; <input type="button" id="submit-del" class="submitbtn" value="删除" />
+    <?cs else ?>
+    &nbsp; <input type="button" id="submit-rev" class="submitbtn" value="恢复" />
+    <?cs /if ?>
+    <?cs /if ?>
+    <span class="indicator"></span>
+  </dd>
+</dl>
+<?cs /escape ?>
+
+<?cs if: ?Output.memory.title ?>
+<script>
+  var mgd = mgd || {};
+
+  mgd.id = <?cs var: Output.memory.id ?>
+  mgd.op = 'mod';
+
+  mgd._done = 1;
+</script>
+<?cs /if ?>

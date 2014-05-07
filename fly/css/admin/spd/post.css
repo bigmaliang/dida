@@ -1,0 +1,12 @@
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+#img-phone, #img-contact {
+    vertical-align: top;
+}
+
+dd {
+    width: 700px;
+}

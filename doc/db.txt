@@ -1,0 +1,13 @@
+select box '((10,10),(100,100))' @> box '((20,40),(25,88))';
+
+
+select (b - @@ b) * point(3,0) + @@ b from (values ('((1,1),(2,2))'::box)) v(b);
+
+select (b - @@ b) * point(1.4,0) + @@ b from (select rect from plan limit 1) v(b);
+select (rect - @@rect) * point(1.4,0) + @@rect from plan limit 1;
+
+he * operator works like this:  xr = (x1*x2) - (y1*y2); yr = (x1*y2) + (y1*x2)
+
+basically, multiplying by (k,0) scales by k, while multiplying by (cos(t),sin(t)) rotates by t radians
+since boxes are always orthogonal to the axes, the transformations are applied to just the two opposing points and a box constructed from the result
+which is why the rotation can leave you with a straight line

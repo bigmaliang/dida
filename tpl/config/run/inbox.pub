@@ -1,0 +1,16 @@
+Dataset {
+    SubNavs {
+        0 {
+            name = 系统通知
+            href = /inbox/system
+        }
+        1 {
+            name = 用户私信
+            href = /inbox/private
+        }
+        2 {
+            name = 已发消息
+            href = /inbox/sent
+        }
+    }
+}

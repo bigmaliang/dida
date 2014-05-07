@@ -1,0 +1,11 @@
+dl.boreop dt {clear: left; float:left; width: 160px; margin: 5px 13px 5px 0; text-align: right;}
+dl.boreop dd {float:left; margin: 5px 0;}
+
+input.title, input.hint {
+    width: 400px;
+    margin-right: 1em;
+}
+
+textarea.content {
+    padding: 5px;
+}

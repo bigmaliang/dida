@@ -1,0 +1,18 @@
+dad 1
+date timestamp
+eaddr
+ecityid
+egeo ()
+ell[]
+ell[]
+km
+rect(sourcegeo,endgeo)
+saddr
+scityid
+sgeo
+sll[]
+sll[]
+time
+
+http://imdida.org/json/plan/match?saddr=%E6%B9%96%E5%8D%97%E7%9C%81%E9%95%BF%E6%B2%99%E5%B8%82&sll%5B%5D=28.213478&sll%5B%5D=112.979353&scityid=4301&eaddr=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82&ecityid=4403&ell%5B%5D=22.546054&ell%5B%5D=114.025974&dad=1&date=2012-07-23&time=08%3A00%3A00&rect=%28%2828.213478%2C112.979353%29%2C%2822.546054%2C114.025974%29%29&sgeo=%2828.213478%2C112.979353%29&egeo=%2822.546054%2C114.025974%29&km=638.46
+

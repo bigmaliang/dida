@@ -1,0 +1,9 @@
+Dataset.Layout {
+    tabpart = 1
+    actions_1 {
+        0 {
+            name = 添加文章
+            href = /bore/new
+        }
+    }
+}

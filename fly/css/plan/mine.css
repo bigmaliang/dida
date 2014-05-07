@@ -1,0 +1,85 @@
+input.shorter {width:90px;}
+dl.inp dt {width: 60px;}
+
+#plans {
+    width: 530px;
+    float: left;
+}
+
+.plan-create {
+    float: right;
+    line-height: 24px;
+    text-shadow: -1px -1px 0 #333333;
+}
+
+#plan-list > li {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    list-style-type: none;
+    margin: 0 0 10px;
+    overflow: hidden;
+    padding: 8px 10px 0;
+}
+
+#plan-list > li.fresh .body {
+    background: -moz-linear-gradient(#F8F8FF, #C7F8FF) repeat scroll 0 0 transparent;
+}
+
+#plan-list > li.paused {
+    color: #aaa;
+}
+
+#plan-list > li .op {
+    float: right;
+    margin-right: 0.2em;
+    font-size: 10px;
+}
+
+#plan-list > li h3 {
+    margin: 0;
+}
+
+#plan-list .body {
+    background: -moz-linear-gradient(#FAFAFA, #EFEFEF) repeat scroll 0 0 transparent;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top: 1px solid #EEEEEE;
+    margin-left: -10px;
+    margin-top: 8px;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+#plan-list .body textarea[name="attach"] {
+    width: 360px;
+}
+
+#plan-list .body dl.inp dt, #plan-list .body dl.inp dd {
+    margin: 1px;
+}
+
+#plan-new {
+    background: -moz-linear-gradient(#FAFAFA, #EFEFEF) repeat scroll 0 0 transparent;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    list-style-type: none;
+    margin: 0 0 10px;
+    overflow: hidden;
+    padding: 8px 10px;
+}
+
+#pnew-attach {
+    width: 418px;
+}
+
+#pnew-repeat {
+    float: left;
+}
+
+#map {
+    height: 370px;
+    width: 370px;
+    float: right;
+/*    border: 1px solid #ddd;*/
+    margin-top: 9ex;
+}

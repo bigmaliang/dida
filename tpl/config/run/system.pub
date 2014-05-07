@@ -1,0 +1,24 @@
+Dataset {
+    SubNavs {
+        0 {
+            name = 访问量
+            href = /system/view
+        }
+        1 {
+            name = 搜索
+            href = /system/search
+        }
+        2 {
+            name = 路线
+            href = /system/plan
+        }
+        3 {
+            name = 注册
+            href = /system/regist
+        }
+        4 {
+            name = 评论
+            href = /system/comment
+        }
+    }
+}

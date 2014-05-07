@@ -1,0 +1,14 @@
+dl.faq dt {
+    line-height: 28px;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+dl.faq dd {
+    line-height: 24px;
+    margin-left: 2em;
+}
+
+dl.faq dd span {
+    margin-left: 2em;
+}

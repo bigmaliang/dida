@@ -1,0 +1,72 @@
+<mockup version="1.0" skin="sketch" measuredW="900" measuredH="700" mockupW="800" mockupH="643">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="100" y="100" w="800" h="600" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::CallOut" x="100" y="57" w="36" h="36" measuredW="37" measuredH="45" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>3</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="145" y="70" w="-1" h="-1" measuredW="96" measuredH="23" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u9080%u8F66%u524D%u5F80%u3002%u3002%u3002</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="287" y="293" w="-1" h="-1" measuredW="121" measuredH="23" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u8BF7%u8F93%u5165%u51FA%u53D1%u65F6%u95F4___%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::RadioButton" x="214" y="333" w="73" h="22" measuredW="73" measuredH="22" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>selected</state>
+        <text>%u51E0%u5C0F%u65F6%u5185</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::RadioButton" x="318" y="333" w="60" h="22" measuredW="60" measuredH="22" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u51E0%u5929%u5185</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::RadioButton" x="415" y="333" w="73" h="22" measuredW="73" measuredH="22" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u65F6%u95F4%u4E0D%u9650</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Calendar" x="207" y="398" w="-1" h="-1" measuredW="96" measuredH="96" zOrder="7" locked="false" isInGroup="-1"/>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::TextInput" x="318" y="432" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>08%20%3A%2000</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Icon" x="734" y="422" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>RightArrowIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Calendar" x="477" y="395" w="-1" h="-1" measuredW="96" measuredH="96" zOrder="10" locked="false" isInGroup="-1"/>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::TextInput" x="588" y="429" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>09%20%3A%2000</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Label" x="415" y="434" w="-1" h="-1" measuredW="18" measuredH="23" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u81F3</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Label" x="690" y="434" w="-1" h="-1" measuredW="44" measuredH="23" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u4E0B%u4E00%u6B65</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::ComboBox" x="207" y="294" w="-1" h="-1" measuredW="54" measuredH="23" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2%u4EBA</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

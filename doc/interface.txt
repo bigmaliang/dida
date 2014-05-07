@@ -1,0 +1,65 @@
+dida 接口规范
+-----------
+dida 目前只提供 http 接口供手机客户端、其他APP调用。 若需要更高速的局域网 socket 接口，请邮件联系。
+
+所有开放的接口列表，请参考 urls.txt， 本文只说明接口的调用方式，传送参数的格式说明等。
+
+以随便逛逛的接口 /bore 为例：
+
+  /bore 返回随便看看的 html 页面
+  /json/bore 返回随便看看的 json 数据
+  /json/bore?_op=get 作用同上
+  /json/bore?_op=mod&id=4 修改某条看看内容
+  /json/bore?_op=add&title=test&content=foo 新增一条看看
+  /json/bore?_op=del&id=4 删除某条看看
+  /json/bore?JsonCallback=xxxx 将返回 xxx(data); 以供跨域调用
+  (url中具体的保留参数请参考 cmoon/README 之 RESERVED key in request url 部分)
+
+  以下是几种常见的操作结果
+
+  {"success": "1"}
+  操作成功，且无其他结果返回。（如修改看看）
+  
+  {"success": "1", "memory": {"id": "12", "title": "test", "content": "foo"}}
+  操作成功，且有memory对象返回。（如获取看看）
+  
+  {"errcode": "36", "errmsg": "omember.c:194 输入参数错误", "errtrace": "...."}
+  操作失败时， errcode, errmsg, errtrace 是必返回的成员
+
+urls.txt 中，每个接口都会对应一个 .h 头文件， 该接口的参数及返回请查看对应的头文件中(cmoon/dida/walk/o*.h)的说明，
+接口按以下规则对应相应的函数：
+        GET /json/member/login  对应 omember.h 的 member_login_data_get()
+        ADD /json/member/new    对应 omember.h 的 member_new_data_add()
+        DEL /json/spd/post/do   对应 ospd.h    的 spd_post_do_data_del()
+        MOD /bore               对应 obore.h   的 bore_data_mod()
+
+
+一般情况下，头文件中，会以以下格式，列出该函数（接口）的作用、输入参数、返回：
+
+/*
+ * Description:
+ * Request:
+ * Returns: 
+ */
+
+如
+
+/*
+ * Description: 这是一个用户注册的函数
+ * Request: mname* - 用户号码，邮箱格式
+ *          mpass* - 密码
+ *          mnick - 用户昵称 2-64个字符
+ * Returns: {"success": "1"}
+ *          {"errcode": xxx, "errmsg": "邮箱已注册"}
+ */
+
+其中， Request 为http请求中需要带的参数，*结尾表示该参数必传，否则为可选传参数。 
+另外，无其他特殊情况，返回一般不会冗述，请自行在浏览器中请求该接口即可方便查看。
+http://json.parser.online.fr/ 可以方便、清晰的查看负载的 json 数据
+
+如对接口的实现逻辑感兴趣，请自行参考对应 oxxx.c 中的函数原型。
+
+注： 该接口注释方式仅适用于 cmoon/dida/ 目录及其子目录下的所有文件，
+    如需注释其他目录下的代码(如cmoon/lib/mnl, cmoon/event/)，格式随意，但请尽量减少中文注释。
+
+That's all, Happy Coding!

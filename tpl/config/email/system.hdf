@@ -1,0 +1,31 @@
+MemberReset {
+    Layout {
+        content = email/passreset.html
+    }
+    Dataset {
+    	Layout {
+        	title = 密码重设邮件
+        }
+    }
+    Valueset {
+        subject = 重置嘀嗒密码
+        opt = -c /var/www/dida/mtl/conf/noreply.conf
+        go = 1
+    }
+}
+
+PlanMatched {
+    Layout {
+    	content = email/planmatched.html
+    }
+    Dataset {
+    	Layout {
+        	title = 路线提醒
+        }
+    }
+    Valueset {
+        subject = 嘀嗒路线提醒
+        opt = -c /var/www/dida/mtl/conf/noreply.conf
+        go = 1
+    }
+}

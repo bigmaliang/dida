@@ -1,0 +1,46 @@
+bore [merge=bore.pub] {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/bore/bore.css" />
+            js = <script type="text/javascript" src="/js/b/bore/bore.js"></script>
+            title = 随便逛逛
+        }
+        Include {
+            content = bore/bore.html
+        }
+    }
+}
+
+bore_op [merge=bore.pub] {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/bore/op.css" />
+            js = <script type="text/javascript" src="/js/b/bore/op.js"></script>
+            title = 改写记忆
+        }
+        Include {
+            content = bore/op.html
+        }
+    }
+}
+
+bore_new [merge=bore.pub] {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/bore/op.css" />
+            js = <script type="text/javascript" src="/js/b/bore/op.js"></script>
+            title = 新鲜事
+            actionpart = 0
+        }
+        Include {
+            content = bore/op.html
+        }
+    }
+}
+
+bore_preview {
+    Layout = bore/preview.html
+}

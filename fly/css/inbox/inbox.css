@@ -1,0 +1,23 @@
+.inbox-content {
+    float: right;
+    position: relative;
+    width: 655px;
+}
+
+.boxed-group-list > li.fresh {
+    background: none repeat scroll 0 0 #FFEEFF;
+}
+
+.boxed-group-list .del {
+    float: right;
+    padding-right: 0.5em;
+}
+
+.boxed-group-list .title {
+    font-weight: bold;
+    padding: 0 0 0.25em;
+}
+
+.boxed-group-list .details {
+    margin-left: 1em;
+}

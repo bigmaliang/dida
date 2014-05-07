@@ -1,0 +1,105 @@
+/* ELEMENT */
+body {background: #e1ecee url(/img/bg/bg.jpg) repeat-x;}
+/*a {color: #DB3946; cursor: pointer; text-decoration: none;}*/
+a {color: #962828; cursor: pointer; text-decoration: none;}
+h1 {margin: 2.5em 0 2em   0;}
+h2 {margin: 2em   0 1.5em 0;}
+h3 {margin: 1.5em 0 0.8em 0;}
+h4 {margin: 1em   0 0.5em 0}
+p {margin:  0.5em 0 1em   0;}
+pre {
+    white-space: pre-wrap;       / css-3 /
+    white-space: -moz-pre-wrap;  / Mozilla, since 1999 /
+    white-space: -pre-wrap;      / Opera 4-6 /
+    white-space: -o-pre-wrap;    / Opera 7 /
+    word-wrap: break-word;       / Internet Explorer 5.5+ /
+}
+
+:focus {outline-style:none;}
+input[type=checkbox] {vertical-align:middle; margin-top:-2px; margin-bottom:1px;}
+input[type=text], input[type=password] {height: 18px; padding-left: 2px; padding-right: 2px;}
+input[type=button] {cursor: pointer; padding: 2px 20px;}
+input, textarea {border: 1px solid #A6A6A6; padding: 2px 2px;}
+
+/* SPECIAL CLASS */
+ul.pad {padding: 0 2em;}
+
+input.btn, button.btn {height: 28px; width: 80px; text-align: center; vertical-align: middle; border: 0px none; color: #fff; background: url(/img/bg/btn.png) 0 0 no-repeat;}
+input.btn:hover {cursor: pointer; background-position: 0 -28px;}
+input.btn-w, button.btn-w{width: 130px; background: url(/img/bg/btn.png) -80px 0 no-repeat;}
+input.btn-w:hover {cursor: pointer; background-positon: -80px -28px;}
+input.shorter {width: 80px;}
+input.short {width: 118px;}
+input.long {width: 200px;}
+input.llong {width: 260px;}
+
+a.btn {display: inline-block; height: 28px; line-height: 22px; width: 80px; text-align: center; color: #fff; background: url(/img/bg/btn.png) 0 0 no-repeat;}
+a.btn:hover {background-position: 0 -28px;}
+
+dl.inp dt {float: left; clear: left; margin: 5px; line-height: 24px; text-align: right; width: 75px;}
+dl.inp dd {margin: 5px; line-height: 24px; float: left;}
+dl.inp dd img {vertical-align: middle;}
+dl.inp dd span {margin-left: 10px;}
+/*dl.inp dd span {margin-left: 20px;}*/
+dl.oneline dt {float: left; margin: 0 5px 0 20px; line-height: 24px; text-align: right;}
+dl.oneline dd {float: left; line-height: 24px;}
+dl.oneline dd img {vertical-align: middle;}
+dl.oneline dd input {float: left;}
+
+table.list {border: 1px solid #CCCCCC; border-collapse:collapse; width:100%;}
+table.list th {background-color: #eee; border-left:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC; padding:4px 4px; text-align:center; width:auto;}
+table.list td {border-left:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC; padding:4px 4px;}
+table.list td span {margin-left: 10px;}
+table.list td img {vertical-align: middle;}
+table.list tr:hover {background-color: #FFFFCC;}
+
+.hide {display: none !important;}
+.show {display: block !important;}
+.valid {border: 1px solid green !important;}
+.invalid {border: 1px solid #800 !important;}
+.clearer {clear: both !important;}
+.sep {display: block; clear: both; height: 3em;}
+.sepl {display: block; clear: both; height: 1em;}
+.decimal {font: 12px Georgia; font-weight: bold;}
+.slight {color:#767676;}
+.em {font-weight: bold;}
+.eem {font-weight: bold; font-size: 120%;}
+/* 浮动元素自动变为块级元素，如 <span class="fright" 将可以为其设置宽度，跟display: inline-block效果一样，除了后者有浏览器兼容问题 */
+.fright {float: right;}
+.fleft {float: left;}
+.text-red {color: #ff0000;}
+.text-green {color: #00ff00;}
+.text-blue {color: #0000ff;}
+.text-center {text-align: center;}
+.text-right {text-align: right;}
+.text-hint {color: #bb0000;}
+.text-success {color: #00ff00;}
+.text-error {color: #ff0000;}
+.full-width {padding: 0 !important;}
+.page-hint {width: 82%; text-align: center; margin: 2em auto; margin-bottom: 3em; padding: 1em; background-color: #FCFCFC; border: 1px solid #DDD; font-weight: bold; -moz-border-radius:4px;}
+/* 有移动子元素时，为其后面的元素自动添加clear，跟最后子元素为clearer效果一样（除了不能为自己设置高度） */
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: block;
+}
+/* 设计 span 的 width，需结合float使用，参考 fright */
+.w100 {width: 100px;}
+.w40 {width: 40px;}
+
+.mr2 {margin-right: 2em;}
+.mr5 {margin-right: 5em;}
+.ml2 {margin-left: 2em;}
+.ml5 {margin-left: 5em;}
+.mt2 {margin-top: 2ex;}
+.mb2 {margin-bottom: 2ex;}
+
+.pr2 {padding-right: 2em;}
+.pr5 {padding-right: 5em;}
+.pl2 {padding-left: 2em;}
+.pl5 {padding-left: 5em;}

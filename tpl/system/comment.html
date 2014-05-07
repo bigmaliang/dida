@@ -1,0 +1,44 @@
+<?cs include:"macro/comment.cs" ?>
+<?cs include:"system/nav.html" ?>
+
+<div class="system-content">
+  <form method="post" action="/system/comment" enctype="multipart/form-data">
+    <dl class="oneline">
+      <dt>开始日期：</dt>
+      <dd>
+        <input type="text" name="times" class="datep shorter" value="<?cs var: Query.times ?>" />
+      </dd>
+      <dt>结束日期：</dt>
+      <dd>
+        <input type="text" name="timee" class="datep shorter" value="<?cs var: Query.timee ?>" />
+      </dd>
+      <dt>&nbsp;</dt>
+      <dd><input type="submit" class="btn" value="查询" /></dd>
+    </dl>
+  </form>
+
+  <div class="sep"></div>
+
+  <div class="boxed-group">
+    <h3>评论列表</h3>
+    <div class="boxed-group-inner">
+      <?cs if:?Output.rows.0.id ?>
+      <ul id="comment" class="boxed-group-list">
+        <?cs each:r = Output.rows ?>
+        <li class="clearfix">
+          <div class="title">
+            <?cs var:r.author ?> <?cs var:r.intime ?> 评论 <?cs
+            call:comment_type(r.type) ?> <a href="<?cs call:comment_href(r.type, r.oid) ?>"><?cs var: r.otitle ?></a>
+          </div>
+          <div class="details">
+            <p class="pre"><?cs var:html_escape(r.content) ?></p>
+          </div>
+        </li>
+        <?cs /each ?>
+      </ul>
+      <?cs else ?>
+      <p>暂无评论</p>
+      <?cs /if ?>
+    </div>
+  </div>
+</div>

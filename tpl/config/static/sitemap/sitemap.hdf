@@ -1,0 +1,17 @@
+sitemap {
+    Layout = layout.html
+    DataGeter = plan_of_recent
+    Dataset {
+        maxday = 3
+        limit = 3000
+        Layout {
+            #css = <link rel="stylesheet" type="text/css" href="/css/b/index.css" />
+            #js = <script type="text/javascript" src="/js/b/index.js"></script>
+            title = 网站地图
+        }
+        Include {
+            content = sitemap.html
+        }
+    }
+    Output = sitemap.html
+}

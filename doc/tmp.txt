@@ -1,0 +1,53 @@
+member
+cityid 设置地图中心
+phone  设置 phone
+contact 设置 contact
+
+plan
+pstatu = 10
+
+saddr 设置起点  ==> scityid, rect, km
+eaddr 设置终点  ==> ecityid
+
++marks 设置 route
+
+
+seat
+
+scityid
+ecityid
+
+id        | 50512
+mid       | 0
+phone     | http://image.58.com/showphone.aspx?t=v55&v=8CF52B3F201EE9B58573CE1B0DEF6EC82
+contact   | 
+ori       | 1
+oid       | 10105433381763
+ourl      | http://sy.58.com/pinche/10105433381763x.shtml
+dad       | 1
+nick      | 孙女士
+statu     | 11
+repeat    | 2
+seat      | 4
+fee       | 0
+attach    | 上班拼车，从塔湾出发，终点到大东门，途经汇宝国际花园、华山路、金龙装饰城、十二线新洪记、德增街加油站、中街新玛特，中间线路可以根据需要适当调整，早7:40左右出发，8:30到单位，每人每次10元。晚4：30下班，途径辽宁大剧院、卓展市府广场、北市场、西塔、汇宝等地,女士机，搭车需提前电话联系。
+scityid   | 0
+ecityid   | 0
+saddr     | 塔湾交通岗、龙江医院
+eaddr     | 中街新玛特、大东副食
+sgeo      | (0,0)
+egeo      | (0,0)
+marks     | 
+rect      | (1,1),(0,0)
+route     | [(0,0),(1,1)]
+km        | 0.1
+sdate     | 1,2,3,4,5
+edate     | 2011-11-11
+stime     | 08:00:00
+etime     | 09:00:00
+estmin    | 0
+intime    | 2012-08-01 14:45:16.422458
+uptime    | 2012-08-02 10:30:17.708891
+cityid    | 2101
+subscribe | 0
+

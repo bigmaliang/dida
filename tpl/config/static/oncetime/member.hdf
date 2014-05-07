@@ -1,0 +1,33 @@
+regist {
+    Layout = layout.html
+    DataGeter = plan_of_recent
+    Dataset {
+        limit = 80
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/member/regist.css" />
+            js = <script type="text/javascript" src="/js/b/member/regist.js"></script>
+            title = 注册帐号
+        }
+        Include {
+            content = member/regist.html
+        }
+    }
+    Output = member/regist.html
+}
+
+reset {
+    Layout = layout.html
+    DataGeter = plan_of_recent
+    Dataset {
+        limit = 80
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/member/reset.css" />
+            js = <script type="text/javascript" src="/js/b/member/reset.js"></script>
+            title = 申请重置密码
+        }
+        Include {
+            content = member/reset.html
+        }
+    }
+    Output = member/reset.html
+}

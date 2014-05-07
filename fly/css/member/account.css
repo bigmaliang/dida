@@ -1,0 +1,10 @@
+#account-setting {
+    width: 655px;
+}
+
+.boxed-group .op {
+    float: right;
+    margin-right: 1em;
+    margin-top: 2ex;
+    font-size: 10px;
+}

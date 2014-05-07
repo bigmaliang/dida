@@ -1,0 +1,90 @@
+<?cs include:"macro/plan.cs" ?>
+<?cs include:"system/nav.html" ?>
+
+<div class="system-content">
+  <form method="get" action="/system/plan" enctype="multipart/form-data">
+    <dl class="oneline clearfix">
+      <dt>开始日期：</dt>
+      <dd>
+        <input type="text" name="times" class="datep shorter" value="<?cs var: Query.times ?>" />
+      </dd>
+      <dt>结束日期：</dt>
+      <dd>
+        <input type="text" name="timee" class="datep shorter" value="<?cs var: Query.timee ?>" />
+      </dd>
+      <dt>&nbsp;</dt>
+      <dd><input type="submit" class="btn" value="查询" /></dd>
+    </dl>
+
+    <div class="mt2">
+      <span>
+        <select name="statu">
+          <option value="10">待确认爬虫入库</option>
+          <option value="2">已确认爬虫正常</option>
+          <option value="11">已确认爬虫错误</option>
+          <option value="0">用户入库</option>
+        </select>
+      </span>
+      <span class="ml2">
+        <select name="repeat">
+          <option value="0">单一日期</option>
+          <option value="1">每天重复</option>
+          <option value="2">按周重复</option>
+        </select>
+      </span>
+      <span class="ml2">
+        最小距离 <input type="text" class="w40" name="km" value="<?cs var:Query.km ?>" />
+      </span>
+    </div>
+
+  </form>
+
+  <div class="sep"></div>
+
+  <?cs if:?Output.rows.0.id ?>
+  <table id="plan-list" class="list">
+    <thead>
+      <tr>
+        <th>起点</th>
+        <th>终点</th>
+        <th>路程</th>
+        <th>出发日期</th>
+        <th>留言</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <?cs each: r = Output.rows ?>
+      <tr>
+        <td title="<?cs var:r.saddr ?>"><?cs var:string.uslice(r.saddr, 0, 6, "...") ?></td>
+        <td title="<?cs var:r.eaddr ?>"><?cs var:string.uslice(r.eaddr, 0, 6, "...") ?></td>
+        <td><?cs var:r.km ?></td>
+        <td><?cs call:plan_sdate(r.repeat, r.sdate) ?> <?cs var:r.stime ?></td>
+        <td title="<?cs var:r.attach ?>"><?cs var:string.uslice(r.attach, 0, 18, "...") ?></td>
+        <td><a target="_blank" href="<?cs var:r.ourl ?>" title="原文连接">连接</a> <a href="javascript:void(0);"
+        class="del" rel="<?cs var:r.id ?>" title="删除"><img src="/img/bg/delete.png" alt="delete" /></a></td>
+      </tr>
+      <?cs /each ?>
+    </tbody>
+  </table>
+  <?cs else ?>
+  <p>暂无路线</p>
+  <?cs /if ?>
+
+</div>
+
+<div class="sepl"></div>
+
+<div id="plan-nav" class="page-nav"></div>
+
+<script>
+  var mgd = mgd || {};
+
+  mgd.npp = <?cs var:Output._npp ?>;
+  mgd.npg = <?cs var:Output._npg ?>;
+  mgd.nst = <?cs var:Output._nst ?>;
+  mgd.ntt = <?cs var:Output._ntt ?>;
+
+  mgd._done = 1;
+</script>

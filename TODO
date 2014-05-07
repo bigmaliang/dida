@@ -1,0 +1,31 @@
+个人主页/member/home?
+联系方式，IE 下获取不到图片有把叉
+/system/view 表格会撑破
+统计
+爬虫后台/批量化
+
+(plan clean) plan edata, etime 去掉
+/json/city/ip 获取坐标不到时，直接用字符串 init google map
+
+what's mean by hdf_register_fileload() in neo_hdf.h?
+mfile_get_type 正确获取文件类型
+
+查询该电话有多少拼车信息
+“我愿意再等等”
+
+DONE /spd/post/robot 能获取到坐标的，自动执行...
+DONE /json/city/s 会取不到鸭子港镇的cityid，所以要递归往上取city
+DONE 修改mstatus, pstatus => statu， 上报请求中将 member 和 plan 信息分开
+DONE mjson.c :145 city:null will core dump
+DONE 随便看看
+DONE mimg_accept 支持 post 方式
+DONE /bore/op js 限制图片文件类型
+DONE cgi_register_parse_cb 限制上传大小
+DONE “邮件订阅该线路”
+DONE (member有效化) plan 自带联系方式，这样不必每个plan注册一个垃圾member
+DONE email 支持 html
+DONE urls.txt 参数明确 (plan/leave 时无 scityid 不应报错)
+DONE 加速地图载入（baidu）
+DONE inbox 的展现
+DONE 用户 dashboard
+DONE spd js 自动往后跳

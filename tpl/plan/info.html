@@ -1,0 +1,51 @@
+<?cs include:"macro/plan.cs" ?>
+
+<h2><?cs var:Output.plan.sdate ?>从<?cs var:Output.plan.saddr ?>到<?cs var:Output.plan.eaddr ?>拼车</h2>
+
+<dl class="inp">
+  <dt>类型：</dt>
+  <dd>
+    <?cs call:plan_dad(Output.plan.dad) ?>
+  </dd>
+  
+  <dt>路线：</dt>
+  <dd>
+    <span id="plan-saddr"><?cs var: Output.plan.saddr ?></span> 至 <span
+    id="plan-eaddr"><?cs var: Output.plan.eaddr ?></span>
+    <a id="plan-from" target="_blank" ></a>
+  </dd>
+
+  <dt>出发时间：</dt>
+  <dd>
+    <span id="plan-sdate"><?cs var: Output.plan.sdate ?></span> <span id="plan-stime"><?cs
+    var: Output.plan.stime ?></span>
+  </dd>
+  
+  <dt>联系人：</dt>
+  <dd>
+    <span id="plan-nick"><?cs var: Output.plan.nick ?></span>
+    <img id="plan-phone" src="/image/plan/pic?defs=segv&type=phone&id=<?cs var: Output.plan.id ?>" />
+    <img id="plan-contact" src="/image/plan/pic?defs=segv&type=contact&id=<?cs var: Output.plan.id ?>" />
+  </dd>
+
+  <dt>留言：</dt>
+  <dd>
+    <span><pre id="plan-attach"><?cs var: Output.plan.attach ?></pre></span>
+  </dd>
+
+  <dt>&nbsp;</dt>
+  <dd class="slight">
+    imdida.org 嘀嗒网是一个专业的拼车信息查询、订阅工具。 健康生活，绿色出行。  <a href="/index.html" class="btn">试试搜索</a>
+  </dd>
+  
+  <div class="clearer"></div>
+</dl>
+
+<script>
+	var mgd = mgd || {};
+
+    mgd.ori = <?cs var: Output.plan.ori ?>;
+    mgd.ourl = "<?cs var: Output.plan.ourl ?>";
+
+    mgd._done = 1;
+</script>

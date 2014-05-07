@@ -1,0 +1,20 @@
+1
+	# adduser 
+		spdbeijing
+		spdshanghai
+		spdguangzhou
+		spdshengzhen
+		spdwuhan
+	with passwd 123123
+
+2   bigml@  xhost +
+
+3   每个用户登录一次，打开 google-chrome，
+        A, 设置每次打开上次打开的页面
+        B, 打开 admin.imdida.org/js/b/admin/spd/58.user.js [ganji, liebiao, edeng...]
+        C, 打开
+           admin.imdida.org/spd/robot
+           .58.com/pinche/
+           .ganji.com/pincheshangxiaban/
+        D, 关掉浏览器， Ctrl+d 退出
+4    每天依次执行 xhost + , dida/mtl/spd/client.sh 1 [2,3,4,5]

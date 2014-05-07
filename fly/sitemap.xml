@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9    http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">
+  <sitemap>
+    <loc>http://imdida.org/sitemaps/static.xml</loc>
+    <lastmod>2010-04-24</lastmod>
+  </sitemap>
+
+  <sitemap>
+    <loc>http://imdida.org/sitemaps/plan/2012-04-25.xml</loc>
+    <lastmod>2010-04-25</lastmod>
+  </sitemap>
+</sitemapindex>

@@ -1,0 +1,55 @@
+<?cs include:"plan/4mineral.html" ?>
+
+<?cs escape: "html" ?>
+
+<h2><?cs var:Output.memory.title ?></h2>
+
+<div class="page-hint"><?cs var:Output.memory.hint ?></div>
+
+<div id="bore-content"><?cs var: mkd.escape(Output.memory.content) ?></div>
+
+<?cs /escape ?>
+
+<div>
+  <a href="/bore?id=<?cs var:Output.memory.id ?>">本文固定连接</a>
+  <?cs if:?SpecialAction.0 ?>
+  <br /> <a href="/bore/op?id=<?cs var:Output.memory.id ?>">修改本文</a>
+  <?cs /if ?>
+</div>
+
+<!-- 评论显示 -->
+<h3>
+  <span id="comment-num-<?cs var: Output.memory.id ?>" class="decimal"></span> 条留言
+</h3>
+<div id="comment">
+</div>
+
+<!-- 评论获取 -->
+<div id="comment-get" class="hide">
+  <a href="javascript:void(0);" id="get-comment">查看更多留言</a>
+</div>
+
+<!-- 写新评论 -->
+<a name="addcomment"></a>
+<ul id="comment-add" class="commentnew">
+  <li>
+    <h4 class="slight">发布留言 (1 ~ 256 个字)</h4>
+  </li>
+  <li>
+    <textarea id="comment-content" class="content VAL_NEWCOMMENT vrequire" vmax="256"></textarea>
+  </li>
+  <li>
+    <input type="button" id="add-comment" class="submitbtn" value="提交" />
+    <span class="indicator"></span>
+  </li>
+</ul>
+
+
+<script>
+  var mgd = mgd || {};
+
+  mgd.id = <?cs var:Output.memory.id ?>;
+  mgd.title = '<?cs var:Output.memory.title ?>'
+  
+  mgd._done = 1;
+</script>

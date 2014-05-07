@@ -1,0 +1,58 @@
+admin
+
+    opos.h
+        GET /pos    获取 geopos 待更新 city
+        MOD /pos    更新 city geopos 坐标
+
+    ospd.h
+        GET /json/spd/pre      爬虫入库前数据查询
+        ADD /json/spd/do       爬虫入数据 member, car, plan
+        
+        GET /spd/post          爬虫入库前人工干预，获取总数
+        GET /json/spd/post/do  爬虫入库前人工干预，获取单条拼车数据
+        MOD /json/spd/post/do  人工确认爬虫单条数据入库
+        DEL /json/spd/post/do  人工删除爬虫单条数据
+
+        GET /spd/robot           机器入库干预页面
+        GET /json/spd/post/robot 机器获取待入库数据
+        MOD /json/spd/post/robot 机器修改待入库数据
+
+
+index.html
+
+readme.html
+
+    opos.h
+        GET /json/city/ip       通过ip获取用户的城市信息
+        GET /json/city/s        通过字符串获取用户的城市信息
+
+    oplan.h
+        GET /json/plan/match    通过路线信息匹配相关路线
+        ADD /json/plan/leave    用户站内留下带联系方式的路线
+        GET /plan/info          查看单条线路详细信息
+        GET /image/plan/pic     通过id查看路线的phone, contact等图片数据
+
+    omember.h
+        GET /json/member/info   通过mname获取用户信息
+        GET /image/member/pic   通过mname获取用户phone, contact等图片数据
+        GET /member/regist.html 用户注册页面
+        GET /member/reset.html  用户申请找回密码
+        GET /json/member/exist  判断用户是否注册
+        ADD /json/member/new    用户注册接口
+        GET /json/member/login  用户登录接口
+        GET /json/member/logout 用户登出接口
+        GET /json/member/reset  用户申请密码重置接口
+        MOD /json/member/edit   修改用户信息接口
+        GET /member/pass        修改用户密码页面
+        GET /member/info        查看用户信息页面
+
+    obore.h
+        GET /bore               随便看看页面
+        GET /bore/op            修改随便看看页面
+        ADD /json/bore/op       添加随便看看接口
+        MOD /json/bore/op       修改随便看看接口
+        GET /bore/preview       随便看看预览页面
+    
+    ocomment.h
+        GET /json/comment       获取评论接口
+        ADD /json/comment       新增评论接口

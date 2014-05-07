@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="keywords" content="<?cs alt:Layout.keywords ?>嘀嗒网,拼车,顺风车,拼车线路搜索,拼车线路订阅,长途拼车,上下班拼车,节假日拼车,健康生活,绿色出行<?cs /alt ?>" />
+    <meta name="description" content="<?cs alt:Layout.description ?>imdida.org 嘀嗒网是一个专业的拼车信息查询、订阅工具。 健康生活，绿色出行。<?cs /alt ?>" />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow,archive" />
+    <title><?cs var: Layout.title ?> - 嘀嗒网,专注拼车,绿色出行</title>
+    <link rel="stylesheet" type="text/css" href="/css/b/base.css" />
+    <?cs var: Layout.css ?>
+    <?cs linclude:Include.css ?>
+
+    <script type="text/javascript" src="/js/b/base.js"></script>
+    <?cs var: Layout.js ?>
+    <?cs linclude:Include.js ?>
+  </head>
+
+  <body>
+    <!--
+    <div id="bd-bg-left"></div>
+    <div id="bd-bg-right"></div>
+    -->
+    <div id="bd-top">
+      <div id="bd-personal">
+        <ul id="bd-member">
+          <li>欢迎 <a href="/plan/mine"><span id="bd-mnick"></span></a></li>
+          <li><a id="bd-mhome">我的首页</a></li>
+          <li class="last"><a href="javascript:void(0);" id="userlogout">退出登录</a></li>
+        </ul>
+        <ul id="bd-guest">
+          <li><a href="javascript: void(0);" rel="#bd-login">登录</a></li>
+          <li><a href="/member/regist.html">注册</a></li>
+          <li class="last"><a href="/member/reset.html">忘记密码</a></li>
+        </ul>
+      </div>
+
+      <ul id="bd-nav">
+        <?cs each:tab = Layout.tabs ?>
+        <li><a class="<?cs var:tab.class ?>" href="<?cs var:tab.href ?>"><?cs var:tab.name ?></a></li>
+        <?cs /each ?>
+      </ul>
+    </div>
+
+    <div id="bd-mid">
+      <div id="bd-content">
+
+        <?cs if: ?Layout.actions.0.name ?>
+        <ul id="bd-action">
+            <?cs each:action = Layout.actions ?>
+            <li><a href="<?cs var:action.href ?>" class="<?cs var:action.class ?>"><?cs var:action.name ?></a></li>
+            <?cs /each ?>
+        </ul>
+        <div class="clearer"></div>
+        <?cs /if ?>
+
+        <?cs if: ?Output.errmsg && Output.errcode == 25 ?>
+          <script>
+            $(document).ready(function() {
+              $('#login-hint').html('<?cs var: Output.errmsg ?>')
+              bmoon.dida.loginoverlay.load();
+            });
+          </script>
+        <?cs elif: ?Output.errmsg && ?Output.errcode?>
+          <h3><?cs var: Output.errcode ?> : <?cs var: Output.errmsg ?></h3>
+          <pre><?cs var: Output.errtrace ?></pre>
+        <?cs else ?>
+          <?cs linclude!Include.content ?>
+          <?cs var:Content.content ?>
+        <?cs /if ?>
+
+      </div>
+    </div>
+
+    <div id="bd-bot">
+      <div class="l"></div>
+      <div class="r"></div>
+      <p>
+        <span>苏ICP备12017211号</span>
+        <span><a href="/sitemap.html">网站地图</a></span>
+        <br /> <br />
+        <span class="slight" >友情连接：</span>
+        <a target="_blank" class="slight" title="漫游网" href="http://www.766580.com">漫游网</a>
+        &nbsp; <a target="_blank" class="slight" title="七夕情人节礼物" href="http://www.bbliwu.com">七夕情人节礼物</a>
+        &nbsp; <a target="_blank" class="slight" title="粉月亮交友网" href="http://www.fenyueliang.com">粉月亮交友网</a>
+        &nbsp; <a target="_blank" class="slight" title="kosher犹太洁食认证网" href="http://www.kosherall.com.cn">kosher犹太洁食认证网</a>
+        &nbsp; <a target="_blank" class="slight" title="第一股讯" href="http://www.guxun001.com">第一股讯</a>
+      </p>
+    </div>
+
+    <div class="overlay" id="bd-login">
+      <h3 id="login-hint" class="text-center">登入滴嗒</h3>
+      <div class="sepl"></div>
+      <dl class="inp">
+        <dt>邮箱：</dt>
+        <dd>
+          <input type="text" id="login-mname" class="VAL_LOGIN vrequire long" />
+        </dd>
+        
+        <dt>密码：</dt>
+        <dd>
+          <input type="password" id="login-msn" class="VAL_LOGIN vrequire" />
+        </dd>
+        
+        <dt>&nbsp; </dt>
+        <dd>
+          <input type="submit" id="login-submit" class="btn" value="提 交" />
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/member/regist.html" target="_blank">还没注册？</a>
+        </dd>
+        <div class="clearer"></div>
+      </dl>
+    </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,3 @@
+* * * * * /var/www/dida/mtl/email.sh 1 >> /tmp/email.log
+0 * * * * /var/www/dida/mtl/email.sh 2 >> /tmp/email.log
+0 0 * * * /var/www/dida/mtl/email.sh 3 >> /tmp/email.log

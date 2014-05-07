@@ -1,0 +1,17 @@
+Dataset {
+    subs {
+        none = 0
+        phone = 1
+        email = 2
+        all = 127
+    }
+    statu {
+        fresh = 0
+        spdok = 1
+        rbtok = 2
+        pause = 3
+        del = 4
+        spdfresh = 10
+        spdrbted = 11
+    }
+}

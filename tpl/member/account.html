@@ -1,0 +1,108 @@
+<div id="account-setting">
+  <div id="base-setting" class="boxed-group">
+    <div class="op">
+      <a id="base-save" class="minibutton disabled"><span>保存修改</span></a>
+    </div>
+    <h3>基本信息</h3>
+    <div class="boxed-group-inner full-width">
+      <table class="list">
+        <tr>
+          <td>注册邮箱</td>
+          <td><?cs var:Output.member.mname ?></td>
+        </tr>
+
+        <tr>
+          <td>称呼</td>
+          <td><input name="mnick" class="VAL_BASE vrequire" vmax="64" vmin="2"
+                     value="<?cs var:Output.member.mnick ?>" /></td>
+        </tr>
+
+        <tr>
+          <td>联系电话</td>
+          <td><input name="phone" class="VAL_BASE vphone" value="<?cs var:Output.member.phone ?>" /></td>
+        </tr>
+
+        <tr>
+          <td>其他联系邮箱/QQ</td>
+          <td><input name="contact" class="VAL_BASE" vmax="64" vmin="3" value="<?cs
+          var:Output.member.contact ?>" /></td>
+        </tr>
+      </table>
+      <span class="indicator"></span>
+    </div>
+  </div>
+
+  <div id="car-setting" class="boxed-group">
+    <div class="op">
+      <a id="car-save" class="minibutton disabled"><span>保存修改</span></a>
+    </div>
+    <h3>汽车信息</h3>
+    <div class="boxed-group-inner">
+      <ul class="boxed-group-list standalone">
+        <li class="clearfix">
+          <span class="fleft w100 text-right">
+            <input type="radio" name="carstatu" value="1" <?cs if:!?Output.member.carstatu || Output.member.carstatu == #1 ?>checked="checked"<?cs /if ?> /> 我仅仅是乘客
+          </span>
+          <span class="ml2">
+            <input type="radio" name="carstatu" value="0" <?cs if:?Output.member.carstatu && Output.member.carstatu == #0 ?>checked="checked"<?cs /if ?> /> 我同时也是车主
+          </span>
+        </li>
+
+        <li class="car-info clearfix <?cs if:!?Output.member.carstatu || Output.member.carstatu == #1 ?>hide<?cs /if ?>">
+          <span class="fleft w100 text-right">车型：</span>
+          <select id="car-size" name="size">
+            <option value="0" selected="selected">小轿车</option>
+            <option value="1">MPV</option>
+            <option value="2">SUV</option>
+            <option value="3">面包车</option>
+            <option value="4">大客车</option>
+            <option value="5">货车</option>
+          </select>
+        </li>
+        <li class="car-info clearfix <?cs if:!?Output.member.carstatu || Output.member.carstatu == #1 ?>hide<?cs /if ?>">
+          <span class="fleft w100 text-right">品牌：</span>
+          <input id="car-model" type="text" class="VAL_CAR vrequire" name="model" value="<?cs var:Output.member.model ?>" />
+        </li>
+        <li class="car-info clearfix <?cs if:!?Output.member.carstatu || Output.member.carstatu == #1 ?>hide<?cs /if ?>">
+          <span class="fleft w100 text-right">购买日期：</span>
+          <input id="car-date" type="text" class="datep VAL_CAR vrequire" name="mdate" value="<?cs var:Output.member.mdate ?>" />
+        </li>
+
+      </ul>
+      <span class="indicator"></span>
+    </div>
+  </div>
+
+  <div id="pass-setting" class="boxed-group">
+    <h3>修改密码</h3>
+    <div class="boxed-group-inner">
+      <dl class="inp">
+        <?cs if:?Output.rlink ?>
+        <input type="hidden" id="rlink" value="<?cs var:Output.rlink ?>" />
+        <?cs else ?>
+        <dt>旧密码：</dt>
+        <dd>
+          <input type="password" name="omsn" id="omsn" class="VAL_MEMBERPASS vrequire" />
+        </dd>
+        <?cs /if ?>
+        <dt>新密码：</dt>
+        <dd>
+          <input type="password" name="msn" id="msn" class="VAL_MEMBERPASS vrequire" />
+        </dd>
+        
+        <dt>密码确认：</dt>
+        <dd>
+          <input type="password" name="msn-r" id="msn-r" class="VAL_MEMBERPASS vrequire" />
+          <span class="indicator"></span>
+        </dd>
+
+        <dt>&nbsp; </dt>
+        <dd>
+          <input type="submit" id="submit" class="btn" value="修改密码" />
+          <span class="indicator"></span>
+        </dd>
+      </dl>
+      <div class="clearer"></div>
+    </div>
+  </div>
+</div>

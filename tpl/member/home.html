@@ -1,0 +1,92 @@
+<?cs include:"macro/plan.cs" ?>
+
+<h2>
+  <?cs if:?Output.member.carstatu && Output.member.carstatu == #0 ?>
+  <span class="tooltip mini-icon user-driver" title="车主"></span>
+  <?cs else ?>
+  <span class="tooltip mini-icon user-passenger" title="乘客"></span>
+  <?cs /if ?>
+  <?cs var:Output.member.mnick ?>
+  <span class="slight decimal">(Since <?cs var:Output.member.intime ?>)</span>
+</h2>
+
+<div id="user-pic-info">
+  <dl class="inp">
+    <dt>联系邮箱</dt>
+    <dd>
+      <img src="/image/member/pic?defs=segv&fsize=12.&type=mname&mid=<?cs var:Output.member.mid ?>" />
+    </dd>
+
+    <dt>联系电话</dt>
+    <dd>
+      <img src="/image/member/pic?defs=0&fsize=12.&type=phone&mid=<?cs var:Output.member.mid ?>" />
+    </dd>
+
+    <dt>备用联系方式</dt>
+    <dd>
+      <img src="/image/member/pic?defs=0&fsize=12.&type=contact&mid=<?cs var:Output.member.mid ?>" />
+    </dd>
+
+    <div class="clearer"></div>
+  </dl>
+</div>
+
+<div id="plans">
+  <h3>
+    共 <span class="slight decimal"><?cs var:Output.Reserve._ntt ?></span> 条线路
+  </h3>
+
+  <?cs if:Output.plans.0.id ?>
+  <ul id="plan-list">
+    <?cs each:p = Output.plans ?>
+    <li>
+      <div class="header">
+        <?cs if:p.dad == 0 ?>
+        <span class="tooltip mini-icon user-driver" title="找车"></span>
+        <?cs elif:p.dad == 1 ?>
+        <span class="tooltip mini-icon user-passenger" title="邀人"></span>
+        <?cs /if ?>
+        <span class="slight">创建于<?cs var: p.intime?></span>
+      </div>
+
+      <div class="body">
+        <dl class="inp" rel="<?cs var:p.id ?>">
+          <dt>路线：</dt>
+          <dd>
+            <span name="saddr"><?cs var:p.saddr ?></span> -
+            <span name="eaddr"><?cs var:p.eaddr ?></span>
+          </dd>
+
+          <dt>出发时间：</dt>
+          <dd>
+            <span name="sdate"><?cs call:plan_sdate(p.repeat, p.sdate) ?></span>
+            <span name="stime"><?cs var:p.stime ?></span>
+          </dd>
+
+          <dt>留言：</dt>
+          <dd>
+            <pre><span name="attach"><?cs var:p.attach ?></span></pre>
+          </dd>
+        </dl>
+        <div class="clearer"></div>
+      </div>
+    </li>
+    <?cs /each ?>
+  </ul>
+  <div id="plan-nav" class="page-nav"></div>
+  <?cs else ?>
+  <div id="plan-list">用户当前没有创建路线</div>
+  <?cs /if ?>
+  
+</div>
+
+<script>
+  var mgd = mgd || {};
+
+  mgd.npp = <?cs var:Output.Reserve._npp ?>;
+  mgd.npg = <?cs var:Output.Reserve._npg ?>;
+  mgd.nst = <?cs var:Output.Reserve._nst ?>;
+  mgd.ntt = <?cs var:Output.Reserve._ntt ?>;
+
+  mgd._done = 1;
+</script>

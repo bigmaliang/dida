@@ -1,0 +1,46 @@
+<?cs include:"inbox/nav.html" ?>
+
+<div class="inbox-content">
+  <div class="boxed-group">
+    <h3>系统通知</h3>
+    <div class="boxed-group-inner">
+      <?cs if:?Output.inbox.0.id ?>
+      <ul id="inbox" class="boxed-group-list">
+        <?cs each:msg = Output.inbox ?>
+        <li class="clearfix <?cs if:msg.fresh==#1 ?>fresh<?cs /if ?>">
+          <div class="del">
+            <a href="javascript:void(0);" rel="<?cs var:msg.id ?>" title="删除">
+              <img src="/img/bg/delete.png" alt="delete" />
+            </a>
+          </div>
+          <div class="title">
+            <a href="/plan/mine?mid=<?cs var:msg.fmid ?>"><?cs var:msg.fnick ?></a> <?cs var:msg.intime ?>
+          </div>
+          <div class="details">
+            <?cs var:msg.message ?>
+          </div>
+        </li>
+        <?cs /each ?>
+      </ul>
+      <?cs else ?>
+      <p>您还没有收到系统通知</p>
+      <?cs /if ?>
+    </div>
+  </div>
+</div>
+
+<div class="clearer"></div>
+
+<div id="inbox-nav" class="page-nav"></div>
+
+<script>
+  var mgd = mgd || {};
+
+  mgd.npp = <?cs var:Output._npp ?>;
+  mgd.npg = <?cs var:Output._npg ?>;
+  mgd.nst = <?cs var:Output._nst ?>;
+  mgd.ntt = <?cs var:Output._ntt ?>;
+
+  mgd._done = 1;
+</script>
+

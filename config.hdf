@@ -1,0 +1,130 @@
+dida = 维持健康、绿色、自由的生活。 不接受捐款、不组织义工的公益组织。
+
+Config {
+    trace_level = 7
+    http_max_upload = 2097152
+    font {
+        member {
+            path = /var/www/dida/tpl/FreeMonoBold.ttf
+            size = 14.
+        }
+        plan {
+            path = /var/www/dida/tpl/FreeMonoBold.ttf
+            size = 14.
+        }
+    }
+    Keywords {
+        plannum = 11
+        plan {
+            0 = 顺风车拼车
+            1 = 上下班拼车
+            2 = 长途拼车
+            3 = 节假日拼车
+            4 = 拼车网
+            5 = 拼车
+            6 = 北京拼车网
+            7 = 深圳拼车网
+            8 = 上海拼车网
+            9 = 广州拼车网
+            10 = 武汉拼车网
+            11 = 拼车回家
+        }
+    }
+}
+
+Dataset {
+    layout.html {
+        tabs {
+            0 {
+                name = 拼车
+                href = /index.html
+            }
+            1 {
+                name = 随便逛逛
+                href = /bore
+            }
+            2 {
+                name = 关于我们
+                href = /readme.html
+            }
+        }
+    }
+}
+
+Db {
+    Dsn {
+        member = pgsql:dbname=merry host=localhost user=dida password=loveu
+        city = pgsql:dbname=merry host=localhost user=dida password=loveu
+        plan = pgsql:dbname=merry host=localhost user=dida password=loveu
+        aux = pgsql:dbname=merry host=localhost user=dida password=loveu
+        trace = pgsql:dbname=merry host=localhost user=dida password=loveu
+    }
+    QueryCond {
+        system {
+            view {
+                type [type=int, require=true] = type =
+                timed [type=raw] = intime >
+                times = intime >
+                timee = intime <
+            }
+            who {
+                type [type=int, require=true] = type =
+                hour = date_trunc('hour', intime) =
+            }
+            viewdetail {
+                sender [maxlen=256, require=true] = sender =
+                day = date_trunc('day', intime) =
+            }
+            comment {
+                type [type=int] = type =
+                statu [type=int] = statu =
+                oid [type=int] = oid =
+                pid [type=int] = pid =
+                author = author =
+                timed [type=raw] = intime >
+                times = intime >
+                timee = intime <
+            }
+            plan {
+                statu [type=int] = statu =
+                repeat [type=int] = repeat =
+                times = intime >
+                timee = intime <
+                km = km >
+            }
+        }
+    }
+    UpdateCol {
+        city {
+            latlng [type=point] = geopos
+        }
+    }
+    InsertCol {
+    }
+}
+
+Memcached {
+    ip = 127.0.0.1
+    port = 11211
+}
+
+Mevent {
+    0 = skeleton
+    1 = member
+    2 = plan
+    3 = city
+    4 = aux
+    5 = fft
+    6 = trace
+}
+
+ClientReqLimit {
+    test_request_data_get = 1
+}
+
+FileCache {
+    0 {
+        uri = ^/test/request$
+        tm_cache = 1800
+    }
+}

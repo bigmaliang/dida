@@ -1,0 +1,331 @@
+Config {
+    logfile = /var/log/moon/dida/mevent
+    trace_level = 5
+}
+
+Server {
+    plugins {
+        0 = skeleton
+        1 = public
+        2 = member
+        3 = plan
+        4 = city
+        5 = aux
+        6 = fft
+        7 = trace
+    }
+    smsalarm {
+        db {
+            dbsn = pgsql:dbname=lcs_mtool host=localhost user=lcser password=loveu
+        }
+        leader {
+            ml = 15111231681
+        }
+    }
+}
+
+Odomain {
+    58 = 1
+    ganji = 2
+    edeng = 3
+    liebiao = 4
+}
+
+Plugin {
+    skeleton {
+        dbsn = pgsql:dbname=merry host=localhost user=dida password=loveu
+        InsertCol {
+            member {
+                midFromHdf [type=int, require=true] = midToDbCol
+            }
+        }
+    }
+    member {
+        dbsn = pgsql:dbname=merry host=localhost user=dida password=loveu
+        InsertCol {
+            member {
+                mid [type=int, require=true] = mid
+                mname [maxlen=256, require=true] = mname
+                mnick [maxlen=256, require=true] = mnick
+                msn [maxlen=256, require=true] = msn
+                mmsn [maxlen=256] = mmsn
+                male [type=int] = male
+                statu [type=int] = statu
+                verify [type=int] = verify
+                credit [type=int] = credit
+                cityid [type=int] = cityid
+                phone [maxlen=128] = phone
+                contact [maxlen=128] = contact
+            }
+            car {
+                mid [type=int, require=true] = mid
+                size [type=int] = size
+                model [maxlen=64] = model
+                mdate = mdate
+            }
+        }
+        UpdateCol {
+            member {
+                mnick [maxlen=256] = mnick
+                msn [maxlen=256] = msn
+                mmsn [maxlen=256] = mmsn
+                male [type=int] = male
+                statu [type=int] = statu
+                verify [type=int] = verify
+                credit [type=int] = credit
+                cityid [type=int] = cityid
+                phone [maxlen=128] = phone
+                contact [maxlen=128] = contact
+            }
+            car {
+                carstatu [type=int] = carstatu
+                size [type=int] = size
+                model [maxlen=64] = model
+                mdate = mdate
+            }
+        }
+    }
+    plan {
+        dbsn = pgsql:dbname=merry host=localhost user=dida password=loveu
+        geoaMin = 10
+        geoaMax = 20
+        geoMax = 35
+        recentMax = 100
+        InsertCol {
+            plan {
+                mid [type=int, require=true] = mid
+                phone [maxlen=128] = phone
+                contact [maxlen=128] = contact
+
+                ori [type=int] = ori
+                oid [maxlen=64] = oid
+                ourl [maxlen=256] = ourl
+
+                dad [type=int, require=true] = dad
+                nick [maxlen=32] = nick
+                statu [type=int] = statu
+                repeat [type=int, require=true] = repeat
+                subscribe [type=int] = subscribe
+                seat [type=int] = seat
+                fee [type=int] = fee
+                attach [maxlen=256] = attach
+
+                cityid [type=int] = cityid
+                scityid [type=int] = scityid
+                ecityid [type=int] = ecityid
+                saddr [maxlen=256] = saddr
+                eaddr [maxlen=256] = eaddr
+                sgeo [type=point] = sgeo
+                egeo [type=point] = egeo
+                marks [maxlen=256] = marks
+                
+                rect [type=box] = rect
+                route [type=path] = route
+                km [type=float] = km
+
+                sdate [maxlen=16, require=true] = sdate
+                edate [maxlen=16] = edate
+                stime = stime
+                etime = etime
+                estmin [type=int] = estmin
+            }
+        }
+        UpdateCol {
+            plan {
+                phone [maxlen=128] = phone
+                contact [maxlen=128] = contact
+                attach [maxlen=256] = attach
+
+                ori [type=int] = ori
+                oid [maxlen=64] = oid
+
+                subscribe [type=bitop, opkey=checkop] = subscribe
+
+                statu [type=int] = statu
+                scityid [type=int] = scityid
+                ecityid [type=int] = ecityid
+                saddr [maxlen=256] = saddr
+                eaddr [maxlen=256] = eaddr
+                sgeo [type=point] = sgeo
+                egeo [type=point] = egeo
+
+                rect [type=box] = rect
+                route [type=path] = route
+                km [type=float] = km
+
+                sdate [maxlen=16] = sdate
+                edate [maxlen=16] = edate
+                stime = stime
+                etime = etime
+            }
+        }
+        QueryCond {
+            geoa {
+                dad [type=int, require=true] = dad =
+                statu [type=int, require=true] = statu <
+                scityid [type=int] = scityid =
+                ecityid [type=int] = ecityid =
+                km [type=float] = (km / 1.2) <
+            }
+            geob {
+                dad [type=int, require=true] = dad =
+                statu [type=int, require=true] = statu <
+                rect [type=box] = ((rect - @@rect) * point(1.2,0) + @@rect) @>
+                sgeo [type=point] = ((rect[0] <-> rect[1]) / 5) > sgeo <-> 
+                km [type=float] = (km / 1.5) <
+            }
+            geox {
+                dad [type=int, require=true] = dad =
+                statu [type=int, require=true] = statu <
+                rect [type=box] = ((rect - @@rect) * point(1.6,0) + @@rect) @>
+                sgeo [type=point] = ((rect[0] <-> rect[1]) / 5) > sgeo <-> 
+                km [type=float] = (km / 1.8) <
+            }
+        }
+    }
+    city {
+        dbsn = pgsql:dbname=merry host=localhost user=dida password=loveu
+        ipfile = /usr/local/lib/QQWry.Dat
+    }
+    aux {
+        dbsn = pgsql:dbname=merry host=localhost user=dida password=loveu
+        InsertCol {
+            comment {
+                type [type=int, require=true] = type
+
+                oid [type=int, require=true] = oid
+                otitle [maxlen=256] = otitle
+                pid [type=int] = pid
+
+                ip [maxlen=64] = ip
+                addr [maxlen=256] = addr
+
+                author [maxlen=64] = author
+                contact [maxlen=256] = contact
+                content [require=true] = content
+            }
+            email {
+                go [type=int] = gotime
+                opt [maxlen=512, require=true] = opts
+                subject [maxlen=256, require=true] = subject
+                to [require=true] = sendto
+                content [require=true] = content
+                checksum [require=true, maxlen=64] = checksum
+            }
+            inbox {
+                mid [type=int, require=true] = mid
+                type [type=int] = type
+                fresh [type=int] = fresh
+                fmid [type=int, require=true] = fmid
+                fnick [maxlen=256, require=true] = fnick
+                message [maxlen=1024, require=true] = message
+            }
+            memory {
+                title [maxlen=256, require=true] = title
+                hint [maxlen=256] = hint
+                content [require=true] = content
+            }
+        }
+        UpdateCol {
+            memory {
+                title [maxlen=256] = title
+                hint [maxlen=256] = hint
+                content = content
+                statu [type=int] = statu
+            }
+        }
+    }
+    fft {
+        dbsn = pgsql:dbname=merry host=localhost user=dida password=loveu
+        meetMaxDay = 3
+        InsertCol {
+            expect {
+                mid [type=int, require=true] = mid
+                mname [maxlen=256, require=true] = mname
+                pid [type=int, require=true] = pid
+                addrtype [type=int, require=true] = addrtype
+                gotime [type=int] = gotime
+
+                dad [type=int] = dad
+                sgeo [type=point] = sgeo
+                rect [type=box] = rect
+                km [type=float] = km
+                repeat [type=int] = repeat
+                sdate [maxlen=16] = sdate
+                stime = stime
+            }
+        }
+#MergeCol is order sensitive
+        MergeCol {
+            expect {
+                mid [type=int, require=true] = mid
+                mname [maxlen=256, require=true] = mname
+                pid [type=int, require=true] = pid
+                addrtype [type=int, require=true] = addrtype
+                statu [type=int] = statu
+                gotime [type=int] = gotime
+
+                dad [type=int] = dad
+                sgeo [type=point] = sgeo
+                rect [type=box] = rect
+                km [type=float] = km
+                repeat [type=int] = repeat
+                sdate [maxlen=16] = sdate
+                stime [type=time] = stime
+            }
+        }
+        UpdateCol {
+            expect {
+#                following cols as update key
+#                mid [type=int, require=true] = mid
+#                mname [maxlen=256, require=true] = mname
+#                pid [type=int, require=true] = pid
+#                addrtype [type=int, require=true] = addrtype
+                statu [type=int] = statu
+                gotime [type=int] = gotime
+
+                dad [type=int] = dad
+                sgeo [type=point] = sgeo
+                rect [type=box] = rect
+                km [type=float] = km
+                repeat [type=int] = repeat
+                sdate [maxlen=16] = sdate
+                stime = stime
+            }
+        }
+        QueryCond {
+            expect {
+                dad [type=int, require=true] = dad !=
+                statu [type=int, require=true] = statu =
+                rect [type=box] = ((rect - @@rect) * point(1.6,0) + @@rect) @>
+                sgeo [type=point] = ((rect[0] <-> rect[1]) / 5) > sgeo <->
+                km [type=float] = (km / 1.8) <
+            }
+        }
+    }
+    trace {
+        dbsn = pgsql:dbname=merry host=localhost user=dida password=loveu
+        InsertCol {
+            emap {
+                type [type=int, require=true] = type
+                sender [maxlen=256, require=true] = sender
+                provid [type=int, require=true] = provid
+                cityid [type=int, require=true] = cityid
+                browser [type=int, require=true] = browser
+                bversion [type=float, require=true] = bversion
+
+                ei_one [type=int] = ei_one
+                ei_two [type=int] = ei_two
+                ei_three [type=int] = ei_three
+
+                es_one [maxlen=256] = es_one
+                es_two [maxlen=256] = es_two
+                es_three [maxlen=256] = es_three
+
+                et_one = et_one
+                et_two = et_two
+                et_three = et_three
+            }
+        }
+    }
+}

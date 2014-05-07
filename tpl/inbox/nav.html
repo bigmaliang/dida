@@ -1,0 +1,20 @@
+<?cs def:rend_nav(part, navs) ?>
+  <?cs each:item = navs ?>
+    <?cs if:part == name(item) ?>
+      <li><a class="selected" href="<?cs var:item.href ?>"><?cs var:item.name ?></a></li>
+    <?cs else ?>
+      <li><a href="<?cs var:item.href ?>"><?cs var:item.name ?></a></li>
+    <?cs /if ?>
+  <?cs /each ?>
+<?cs /def ?>
+
+<div class="accordion-container">
+  <ul class="accordion">
+    <li class="section">
+      <a class="section-head"><?cs var:Output.member.mnick ?>的信箱</a>
+      <ul class="expanded section-nav">
+        <?cs call:rend_nav(Layout.subnavpart, SubNavs) ?>
+      </ul>
+    </li>
+  </ul>
+</div>

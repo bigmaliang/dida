@@ -1,0 +1,22 @@
+<h2>地名</h2>
+
+<ul>
+  <?cs each:city=Output.cts ?>
+  <!--<li><?cs var:city.s ?> <?cs var:city.geopos ?></li>-->
+  <?cs /each ?>
+</ul>
+
+<div id="res">
+</div>
+
+<script>
+  var mgd = mgd || {};
+
+  mgd.cities = [];
+
+  <?cs each:city=Output.cts ?>
+  mgd.cities.push({id: <?cs var:city.id ?>, s: '<?cs var:city.s ?>'});
+  <?cs /each ?>
+
+  mgd._done = 1;
+</script>

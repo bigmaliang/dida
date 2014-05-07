@@ -1,0 +1,188 @@
+lighttpd
+========
+1
+-
+...lighttpd.conf
++mod_rewrite
++mod_expire
+
+2
+-
+(dev)
+    ...10-simple-vhost.conf
+    $HTTP["host"] == "www.imdida.org" {
+      server.document-root = "/var/www/dida/fly/"
+      url.rewrite-once= ("^/([^\.\?]+[^\/])$" => "/run/viki?ScriptName=$1",
+                         "^/([^\.]+)\?(.*[^\/])$"   => "/run/viki?ScriptName=$1&$2")
+      $HTTP["url"] =~ "^/run/" {
+            cgi.assign = ( "" => "" )
+      }
+    }
+
+(run)
+    ...10-simple-vhost.conf
+    $HTTP["host"] == "www.imdida.org" {
+      server.document-root = "/var/www/dida/fly/"
+      url.rewrite-once= ("^/([^\.\?]+[^\/])$" => "/run/viki?ScriptName=$1",
+                         "^/([^\.]+)\?(.*[^\/])$"   => "/run/viki?ScriptName=$1&$2")
+      $HTTP["url"] =~ "^/img/.*" {
+         expire.url = ( "" => "access 30 days" )
+      }
+      $HTTP["url"] =~ "^/obj/.*" {
+         expire.url = ( "" => "access 30 days" )
+      }
+      $HTTP["url"] =~ "^/pic/.*" {
+         expire.url = ( "" => "access 30 days" )
+      }
+      $HTTP["url"] =~ "^.*\.html$" {
+         expire.url = ( "" => "access 1 days" )
+      }
+      $HTTP["url"] =~ "^.*\.js$" {
+         expire.url = ( "" => "access 1 days" )
+      }
+      $HTTP["url"] =~ "^.*\.css$" {
+         expire.url = ( "" => "access 1 days" )
+      }
+    }
+    
+    $HTTP["host"] == "js.imdida.org" {
+      server.document-root = "/var/www/dida/fly/js/"
+      expire.url = ("" => "access 1 days")
+    }
+    
+    $HTTP["host"] == "css.imdida.org" {
+      server.document-root = "/var/www/dida/fly/css/"
+      expire.url = ("" => "access 1 days")
+    }
+    
+    #mkdir -p /var/run/lighttpd/sockets/ && chown www-data /var/run/lighttpd/sockets/
+    
+    ...10-fastcgi.conf
+    var.socket_dir = "/var/run/lighttpd/sockets/"
+    fastcgi.server = ("viki" => 
+        ( "viki" =>
+            (
+                "socket" => socket_dir + "viki",
+                "check-local" => "disable",
+                "bin-path" => "/var/www/dida/run/viki",
+                "min-procs" => 1,
+                "max-procs" => 10,
+                "idle-timeout" => 30
+            )
+        )
+    )
+
+
+nginx
+=====
+tcp #spawn-fcgi -d /var/www/dida/fly/run/ -f /var/www/dida/fly/run/viki -a 127.0.0.1 -p 9001
+unix domain socket #spawn-fcgi -F 60 -d /var/www/dida/fly/run/ -f /var/www/dida/fly/run/viki -s /var/run/viki.socket -u www
+    (www is the nginx username)
+
+server
+{
+    listen 80;
+    server_name *.imdida.org;
+    
+    index index.html index.htm;
+    root  /var/www/dida/fly;
+    
+    rewrite ^/([^\.\?]+[^\/])$      /run/viki?ScriptName=$1 last;
+    rewrite ^/([^\.]+)\?(.*[^\/])$  /run/viki?ScriptName=$1&$2 last;
+    
+    location ~ ^/run/.*$ {
+        include fastcgi.conf;
+tcp        fastcgi_pass 127.0.0.1:9001;
+unix domain socket        fastcgi_pass unix:/var/run/viki.socket;
+        fastcgi_index viki;
+        fastcgi_param SCRIPT_FILENAME  /var/www/dida/fly/run/$fastcgi_script_name;
+        fastcgi_param QUERY_STRING     $query_string;
+        fastcgi_param REQUEST_METHOD   $request_method;
+        fastcgi_param CONTENT_TYPE     $content_type;
+        fastcgi_param CONTENT_LENGTH   $content_length;
+        fastcgi_param GATEWAY_INTERFACE  CGI/1.1;
+        fastcgi_param SERVER_SOFTWARE    nginx;
+        fastcgi_param SCRIPT_NAME        $fastcgi_script_name;
+        fastcgi_param REQUEST_URI        $request_uri;
+        fastcgi_param DOCUMENT_URI       $document_uri;
+        fastcgi_param DOCUMENT_ROOT      $document_root;
+        fastcgi_param SERVER_PROTOCOL    $server_protocol;
+        fastcgi_param REMOTE_ADDR        $remote_addr;
+        fastcgi_param REMOTE_PORT        $remote_port;
+        fastcgi_param SERVER_ADDR        $server_addr;
+        fastcgi_param SERVER_PORT        $server_port;
+        fastcgi_param SERVER_NAME        $server_name;
+    }
+}
+
+
+
+postgresql
+==========
+
+0
+-
+Debian                                          RedHat
+                                                yum install postgresql84-server.i386
+                                                service postgresql initdb
+                                                /etc/init.d/postgresql start
+/Library/PostgreSQL/9.2/bin/pg_ctl start -D/Library/PostgreSQL/9.2/data
+
+1
+-
+#su postgres
+$psql
+=#CREATE USER dida CREATEDB password 'loveu';
+
+
+2
+-
+...pg_hba.conf
++local  all     dida    ident   map=dida
+允许本地  数据库名  DB帐号   验证方式  验证关键字
+
+.../pg_ident.conf
++dida   bigml   dida
+
+
+3
+-
+$psql -U dida -d postgres
+=>create database merry encoding='utf8';
+
+$psql -U postgres
+=#\c merry
+=#CREATE LANGUAGE plpgsql;
+=#CREATE FUNCTION update_time() RETURNS TRIGGER AS $$ BEGIN NEW.uptime=now(); RETURN NEW; END; $$ LANGUAGE plpgsql;
+
+
+4
+-
+$psql -U dida merry
+=>\i /var/www/dida/mtl/table_merry.sql
+=>\i /var/www/dida/mtl/table_aux.sql
+=>\i /var/www/dida/mtl/table_fireflight.sql
+=>\i /var/www/dida/mtl/table_trace.sql
+=>\i /var/www/dida/mtl/data_city.sql
+
+
+备注:
+    上述配置, dida 只能以bigml通过 local 方式登录, 如需其他方式请修改 pg_hba.conf 文件,
+    pg_ident.conf 文件只是在 认证方式为 ident 的时候配合修改(ident也可以存在于TCP/IP方式)
+    关于 pg_hba.conf 的说明可以参考 http://www.chinaunix.net/jh/18/8176.html
+
+    RedHat系统, /var/lib/pgsql/data/pg_hba.conf 需要注释掉原有的 local all all ident
+    并将
+        host    all         all         127.0.0.1/32          ident
+    改为
+        host    all         all         127.0.0.1/32          md5
+
+
+启动开发环境
+=========
+# cd /var/www && ln -s /your/path/to/moon/dida dida
+# cd /var/www/dida/xport; make install
+$ cd /var/www/dida/pager; ./static
+$ mkdir /var/log/moon/dida
+$ killall mevent; sleep 1; /var/www/dida/xport/daemon/mevent -c /var/www/dida/xport/conf/server.hdf
+# /etc/init.d/lighttpd start

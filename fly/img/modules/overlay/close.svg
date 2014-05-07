@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="36"
+   height="36"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="close.svg"
+   inkscape:export-filename="/home/bigml/web/moon/pop/fly/img/overlay/close.png"
+   inkscape:export-xdpi="87.5"
+   inkscape:export-ydpi="87.5">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <filter
+       inkscape:collect="always"
+       id="filter3618">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.074293028"
+         id="feGaussianBlur3620" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter3640">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.42973821"
+         id="feGaussianBlur3642" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="30.769148"
+     inkscape:cy="-4.9238609"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="820"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1016.3622)">
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#a9a9a9;stroke-width:0.96777886000000002;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3640)"
+       id="path3590"
+       sodipodi:cx="19.03665"
+       sodipodi:cy="20.670156"
+       sodipodi:rx="14.324607"
+       sodipodi:ry="14.324607"
+       d="m 33.361257,20.670156 a 14.324607,14.324607 0 1 1 -28.6492142,0 14.324607,14.324607 0 1 1 28.6492142,0 z"
+       transform="matrix(1.104919,0,0,1.104919,-2.8117444,1011.4801)" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#db3946;fill-opacity:1;fill-rule:evenodd;stroke:none;filter:url(#filter3618)"
+       id="path3592"
+       sodipodi:cx="19.821989"
+       sodipodi:cy="17.403141"
+       sodipodi:rx="7.4450264"
+       sodipodi:ry="7.4136124"
+       d="m 27.267015,17.403141 a 7.4450264,7.4136124 0 1 1 -14.890052,0 7.4450264,7.4136124 0 1 1 14.890052,0 z"
+       transform="matrix(1.647394,0,0,1.6543745,-14.432414,1005.5277)" />
+    <rect
+       style="fill:#fffafa;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3604"
+       width="20"
+       height="4"
+       x="734.25903"
+       y="716.48895"
+       rx="1.0714285"
+       ry="1.2857143"
+       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect3604"
+       id="use3639"
+       transform="matrix(0,-1,1,0,-1016.0968,1052.5412)"
+       width="36"
+       height="36" />
+  </g>
+</svg>

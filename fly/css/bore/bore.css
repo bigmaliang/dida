@@ -1,0 +1,50 @@
+ul.commentnew h4 {
+    margin-bottom: 0;
+}
+
+ul.commentnew li {
+    margin: 3px 0;
+}
+
+textarea.content {
+    height: 150px;
+    width: 520px;
+    padding: 5px;
+}
+textarea.reply {
+    height: 62px;
+    width: 270px;
+    padding: 2px;
+    margin-right: 1em;
+}
+
+#comments {
+    clear: both;
+    margin: 5ex 1ex;
+}
+
+#comments h3 {
+    margin:1em 0 0.5em;
+}
+
+#comments .comment-item {
+    margin-top: 2ex;
+}
+
+.comment-item .info {
+    color:#767676;
+}
+
+.comment-item .info .author {
+    color:black;
+}
+
+.comment-item p.pre {
+    margin: 0 10px;
+    white-space: pre-wrap;       /* css 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla*/
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    *white-space: pre;
+    word-wrap: break-word;       /* IE 5.5?? */
+}

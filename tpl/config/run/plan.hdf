@@ -1,0 +1,27 @@
+plan_info {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/plan/info.css" />
+            js = <script type="text/javascript" src="/js/b/plan/info.js"></script>
+        }
+        Include {
+            content = plan/info.html
+        }
+    }
+}
+
+plan_mine [merge="dashboard.pub,plan.pub"] {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/plan/mine.css" />
+            js = <script type="text/javascript" src="/js/b/plan/mine.js"></script>
+            title = 我的线路
+            actionpart = 0
+        }
+        Include {
+            content = plan/mine.html
+        }
+    }
+}

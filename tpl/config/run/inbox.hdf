@@ -1,0 +1,47 @@
+inbox_system [merge="dashboard.pub,inbox.pub"] {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/inbox/system.css" />
+            js = <script type="text/javascript" src="/js/b/inbox/system.js"></script>
+            title = 站内通知
+            actionpart = 2
+            subnavpart = 0
+        }
+        Include {
+            content = inbox/system.html
+        }
+    }
+}
+
+inbox_private [merge="dashboard.pub,inbox.pub"] {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/inbox/private.css" />
+            js = <script type="text/javascript" src="/js/b/inbox/private.js"></script>
+            title = 站内通知
+            actionpart = 2
+            subnavpart = 1
+        }
+        Include {
+            content = inbox/private.html
+        }
+    }
+}
+
+inbox_sent [merge="dashboard.pub,inbox.pub"] {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/inbox/sent.css" />
+            js = <script type="text/javascript" src="/js/b/inbox/sent.js"></script>
+            title = 站内通知
+            actionpart = 2
+            subnavpart = 2
+        }
+        Include {
+            content = inbox/sent.html
+        }
+    }
+}

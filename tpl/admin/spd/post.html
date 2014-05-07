@@ -1,0 +1,63 @@
+<h2>入库前
+<span class="slight">
+  <span id="count" class="text-red"> <?cs var: Output._ntt ?></span> 条待入库
+</span>
+</h2>
+
+<div>
+  <dl class="inp" id="planinfo">
+    <dt>起点</dt>
+    <dd>
+      <input type="text" class="llong" id="saddr" />
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      终点&nbsp;&nbsp;
+      <input type="text" class="llong" id="eaddr" />
+      <span id="km" class="slight"></span>
+    </dd>
+
+    <dt>出发时间</dt>
+    <dd>
+      <input type="text" id="sdate" />
+      <input type="text" id="stime" />
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <a id="ourl" target="_blank" href="">原文</a>
+      <span id="planid"></span>
+    </dd>
+    
+    <dt>电话</dt>
+    <dd>
+      <input type="text" id="phone" /> <img id="img-phone" src="" />
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      联系&nbsp;&nbsp;
+      <input type="text" id="contact" /> <img id="img-contact" src="" />
+    </dd>
+
+    <dt>留言</dt>
+    <dd>
+      <span id="attach"></span>
+    </dd>
+
+    <dt>&nbsp;</dt>
+    <dd>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="button" id="del" value="删除" />
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="button" id="next" value="跳过" />
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="button" id="save" value="保存" />
+      <span class="indicator"></span>
+    </dd>
+    
+  </dl>
+</div>
+
+<div id="map">
+</div>
+
+<script>
+  var mgd = mgd || {};
+
+  mgd._ntt = <?cs var: Output._ntt ?>;
+
+  mgd._done = 1;
+</script>

@@ -1,0 +1,56 @@
+system_view [merge="dashboard.pub,system.pub"] {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/system/view.css" />
+            js << EOM
+            <!--[if IE]><script type="text/javascript" src="/js/b/system/ie.js"></script><![endif]-->
+            <script type="text/javascript" src="/js/b/system/view.js"></script>
+EOM
+            title = 访问量统计
+            actionpart = 3
+            subnavpart = 0
+        }
+        Include {
+            content = system/view.html
+        }
+    }
+}
+
+system_plan [merge="dashboard.pub,system.pub"] {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/system/plan.css" />
+            js << EOM
+            <!--[if IE]><script type="text/javascript" src="/js/b/system/ie.js"></script><![endif]-->
+            <script type="text/javascript" src="/js/b/system/plan.js"></script>
+EOM
+            title = 路线管理
+            actionpart = 3
+            subnavpart = 2
+        }
+        Include {
+            content = system/plan.html
+        }
+    }
+}
+
+system_comment [merge="dashboard.pub,system.pub"] {
+    Layout = layout.html
+    Dataset {
+        Layout {
+            css = <link rel="stylesheet" type="text/css" href="/css/b/system/comment.css" />
+            js << EOM
+            <!--[if IE]><script type="text/javascript" src="/js/b/system/ie.js"></script><![endif]-->
+            <script type="text/javascript" src="/js/b/system/comment.js"></script>
+EOM
+            title = 系统评论
+            actionpart = 3
+            subnavpart = 4
+        }
+        Include {
+            content = system/comment.html
+        }
+    }
+}
