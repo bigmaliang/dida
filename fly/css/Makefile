@@ -38,7 +38,7 @@ b/member/account.css: modules/box.css modules/minibtn.css modules/indicator.css 
                       modules/dateinput/dateinput.css \
                       member/account.css
 b/member/reset.css: modules/indicator.css
-b/member/home.css: modules/tooltip.css modules/miniicon.css modules/pagenav.css \
+b/member/home.css: modules/tooltip.css modules/miniicon.css pub/pagenav/pagenav.css \
                    member/home.css
 
 b/bore/bore.css: modules/indicator.css bore/bore.css
@@ -46,24 +46,24 @@ b/bore/op.css: modules/indicator.css bore/mku_skin.css bore/mku_set.css bore/op.
 
 b/plan/info.css: plan/info.css
 b/plan/mine.css: modules/dateinput/dateinput.css modules/tooltip.css \
-                 modules/indicator.css modules/minibtn.css modules/pagenav.css \
+                 modules/indicator.css modules/minibtn.css pub/pagenav/pagenav.css \
                  plan/mine.css
 
-b/inbox/system.css: modules/accordion.css modules/box.css modules/pagenav.css \
+b/inbox/system.css: modules/accordion.css modules/box.css pub/pagenav/pagenav.css \
                     inbox/inbox.css
-b/inbox/private.css: modules/accordion.css modules/box.css modules/pagenav.css \
+b/inbox/private.css: modules/accordion.css modules/box.css pub/pagenav/pagenav.css \
                      inbox/inbox.css
-b/inbox/sent.css: modules/accordion.css modules/box.css modules/pagenav.css \
+b/inbox/sent.css: modules/accordion.css modules/box.css pub/pagenav/pagenav.css \
                   inbox/inbox.css
 
 b/system/view.css: modules/accordion.css modules/box.css \
-                   modules/dateinput/dateinput.css modules/tablesorter/tablesorter.css \
+                   modules/dateinput/dateinput.css pub/tablesorter/tablesorter.css \
                    system/system.css
 b/system/comment.css: modules/accordion.css modules/box.css \
                    modules/dateinput/dateinput.css \
                    system/system.css system/comment.css
 b/system/plan.css: modules/accordion.css modules/box.css \
-                   modules/dateinput/dateinput.css modules/pagenav.css \
+                   modules/dateinput/dateinput.css pub/pagenav/pagenav.css \
                    system/system.css
 
 %.css:

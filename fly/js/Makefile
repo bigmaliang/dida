@@ -61,7 +61,7 @@ b/admin/spd/robot.js: admin/spd/robot.js
 b/member/regist.js: pub/noty/js/jquery.noty.js member/regist.js
 b/member/reset.js: member/reset.js
 b/member/account.js: pub/jquerytools/src/dateinput/dateinput.js member/account.js
-b/member/home.js: pub/jquerytools/src/tooltip/tooltip.js pub/jquery.mnnav.js \
+b/member/home.js: pub/jquerytools/src/tooltip/tooltip.js pub/pagenav/jquery.mnnav.js \
                   member/home.js
 
 b/bore/bore.js: bore/bore.js
@@ -71,20 +71,20 @@ b/bore/op.js: pub/markitup/markitup/jquery.markitup.js bore/mku_set.js \
 b/plan/info.js: plan/info.js
 b/plan/mine.js: pub/jquerytools/src/dateinput/dateinput.js \
                 pub/noty/js/jquery.noty.js \
-                pub/jquery.mnnav.js pub/jquerytools/src/tooltip/tooltip.js \
+                pub/pagenav/jquery.mnnav.js pub/jquerytools/src/tooltip/tooltip.js \
                 pub/jquery.mnblink.js \
                 plan/mine.js
 
-b/inbox/system.js: pub/jquery.mnnav.js inbox/system.js
+b/inbox/system.js: pub/pagenav/jquery.mnnav.js inbox/system.js
 
 b/system/ie.js: pub/flot/excanvas.min.js
 b/system/view.js: pub/jquerytools/src/dateinput/dateinput.js \
-                  pub/jquery.mntable.js pub/jquery.tablesorter.js \
+                  pub/jquery.mntable.js pub/tablesorter/jquery.tablesorter.js \
                   pub/flot/jquery.flot.js pub/flot/jquery.flot.time.js system/view.js
 b/system/comment.js: pub/jquerytools/src/dateinput/dateinput.js \
                   system/comment.js
 b/system/plan.js: pub/jquerytools/src/dateinput/dateinput.js \
-                  pub/jquery.mnnav.js \
+                  pub/pagenav/jquery.mnnav.js \
                   system/plan.js
 
 %.js:

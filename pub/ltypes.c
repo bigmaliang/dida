@@ -9,7 +9,7 @@ session_t* session_default()
     session_t *ses = calloc(1, sizeof(session_t));
 
     ses->reqtype = CGI_REQ_AJAX;
-    
+
     return ses;
 }
 
@@ -18,6 +18,7 @@ NEOERR* session_init(CGI *cgi, HASH *dbh, session_t **ses)
     session_t *lses;
     HDF *node, *onode;
     char tok[LEN_HDF_KEY], *s;
+    NEOERR *err;
 
     /*
      * follow cgi_parse(), to process _type_object
@@ -31,12 +32,13 @@ NEOERR* session_init(CGI *cgi, HASH *dbh, session_t **ses)
                      PRE_QUERY, neos_strip((char*)list->items[t_rsv_i]));
             onode = hdf_get_obj(cgi->hdf, tok);
             if (onode) {
-                mjson_export_to_hdf(onode, NULL, MJSON_EXPORT_NONE, false);
+                err = mjson_string_to_hdf(onode, NULL, MJSON_EXPORT_NONE);
+                TRACE_NOK(err);
             }
         }
         uListDestroy(&list, ULIST_FREE);
     }
-    
+
     *ses = NULL;
 
     lses = calloc(1, sizeof(session_t));
@@ -143,7 +145,7 @@ NEOERR* session_init(CGI *cgi, HASH *dbh, session_t **ses)
      * DONE
      */
     *ses = lses;
-    
+
     return STATUS_OK;
 }
 
